@@ -1,0 +1,146 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+# Specmatic Open Source 
+
+## Open Source CLI standalone executable
+Read our “CLI Quick Start (in 5 min)” section and learn more about using the standalone executable.
+
+To run the latest version:
+```bash
+docker run -it --rm specmatic/specmatic --help
+``` 
+
+For older versions, replace VERSION with the desired version number from the Docker Hub page
+```bash
+docker run -it --rm specmatic/specmatic:VERSION --help
+```
+## Specmatic Commercial offerings
+
+### Specmatic OpenAPI
+
+If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
+
+To install the latest version:
+```bash
+irm https://docs.specmatic.io/install-specmatic-openapi.ps1 | iex
+```
+
+To install an older version, replace VERSION with the desired version number from the Releases page.
+```bash
+iex "& { $(irm 'https://docs.specmatic.io/install-specmatic-openapi.ps1') } --version VERSION"
+```
+
+
+### Specmatic Studio
+If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
+
+To install the latest version:
+```bash
+irm https://docs.specmatic.io/install-specmatic-studio.ps1 | iex
+```
+
+To install an older version, replace VERSION with the desired version number from the Releases page.
+```bash
+iex "& { $(irm 'https://docs.specmatic.io/install-specmatic-studio.ps1') } --version VERSION"
+```
+
+### Specmatic Async
+
+<Tabs>
+<TabItem value="docker-unix" label="Docker (Linux / macOS)" default>
+To run the latest version:
+```bash
+docker run -it --rm specmatic/specmatic-async --help
+```
+
+To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
+```bash
+docker run -it --rm -v $HOME/.license:/root/.specmatic specmatic/specmatic-async --help
+```
+For older versions, replace VERSION with the desired version number from the Docker Hub page
+```bash
+docker run -it --rm specmatic/specmatic-async:VERSION --help
+```
+
+</TabItem> <TabItem value="docker-windows" label="Docker (Windows PowerShell)">
+
+
+To run the latest version:
+```bash
+docker run -it --rm specmatic/specmatic-async --help
+```
+
+To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
+
+If running in Powershell, use the following command:
+```bash
+docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/specmatic-async --help
+```
+For older versions, replace VERSION with the desired version number from the Docker Hub page
+```bash
+docker run -it --rm specmatic/specmatic-async:VERSION --help
+```
+</TabItem> 
+
+
+<TabItem value="Linux-macOS" label="Linux/macOS">
+If you have Java 17 or above installed, you can install the executable using the following command and follow the onscreen instructions:
+
+To run the latest version:
+
+```bash
+curl https://docs.specmatic.io/install-specmatic-kafka.sh | bash
+
+```
+To install an older version, replace VERSION with the desired version number from the Releases page.
+```bash
+curl https://docs.specmatic.io/install-specmatic-kafka.sh | bash -- --version VERSION
+
+```
+</TabItem>
+
+
+</Tabs>
+
+
+
+### Specmatic Kafka
+
+<Tabs>
+
+
+<TabItem value="Kafka Docker-linux-macOS" label="Docker Linux/macOS">
+If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
+
+To install the latest version:
+
+```bash
+irm https://docs.specmatic.io/install-specmatic-kafka.ps1 | iex
+```
+</TabItem>
+
+<TabItem value="Kafka Win-Powershell" label="Docker Win-Powershell">
+To run the latest version:
+```bash
+docker run -it --rm specmatic/specmatic-kafka --help
+```
+To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
+
+If running in Powershell, use the following command:
+
+```bash
+docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/specmatic-kafka --help
+```
+
+For older versions, replace VERSION with the desired version number from the Docker Hub page
+```bash
+docker run -it --rm specmatic/specmatic-kafka:VERSION --help
+```
+</TabItem>
+
+
+
+
+
+</Tabs>
