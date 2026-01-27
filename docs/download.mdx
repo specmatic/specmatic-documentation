@@ -3,149 +3,209 @@ title: Download
 sidebar_label: Download
 sidebar_position: 2
 ---
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-## Specmatic Open Source 
+## Specmatic Open Source
 
 ### Open Source CLI standalone executable
-Read our “CLI Quick Start (in 5 min)” section and learn more about using the standalone executable.
+
+Read the **CLI Quick Start (in 5 min)** guide to learn more about using the standalone executable:
+
+- Docs: `/docs/getting-started/cli-quick-start` (or your chosen quick-start page)
+
+<Tabs groupId="install-specmatic">
+  <TabItem value="docker" label="Docker">
 
 To run the latest version:
+
 ```bash
 docker run -it --rm specmatic/specmatic --help
-``` 
+```
 
-For older versions, replace VERSION with the desired version number from the Docker Hub page
+For older versions, replace `VERSION` with the desired version number from the Docker Hub tags page:
+
 ```bash
 docker run -it --rm specmatic/specmatic:VERSION --help
 ```
-## Specmatic Commercial offerings
+
+  </TabItem>
+  <TabItem value="jar" label="JAR">
+
+You can download the standalone JAR from:
+
+- GitHub releases: `https://github.com/specmatic/specmatic/releases`
+- Maven Central: search for `io.specmatic:specmatic-executable-all`
+
+To run the JAR:
+
+```bash
+java -jar specmatic.jar --help
+```
+
+  </TabItem>
+  <TabItem value="linux-macos" label="Linux / macOS">
+
+If you have Java 17 or above installed, you can install Specmatic with a shell script:
+
+To install the latest version:
+
+```bash
+curl https://specmatic.io/install-specmatic.sh | bash
+```
+
+To install a specific version, replace `VERSION` with a release number from GitHub:
+
+```bash
+curl https://specmatic.io/install-specmatic.sh | bash -- --version VERSION
+```
+
+  </TabItem>
+  <TabItem value="windows" label="Windows">
+
+If you have Java 17 or above installed, you can install Specmatic using PowerShell:
+
+To install the latest version:
+
+```powershell
+irm https://specmatic.io/install-specmatic.ps1 | iex
+```
+
+To install a specific version, replace `VERSION` with a release number from GitHub:
+
+```powershell
+iex "& { $(irm 'https://specmatic.io/install-specmatic.ps1') } --version VERSION"
+```
+
+  </TabItem>
+  <TabItem value="npm" label="NPM">
+
+To run the latest version:
+
+```bash
+npx specmatic
+```
+
+To run a specific version, replace `VERSION` with a version from npm:
+
+```bash
+npx specmatic@VERSION
+```
+
+  </TabItem>
+  <TabItem value="python" label="Python (pip)">
+
+To install Specmatic via `pip`:
+
+```bash
+pip install specmatic
+```
+
+To install a specific version, replace `VERSION` with a version from PyPI:
+
+```bash
+pip install specmatic==VERSION
+```
+
+  </TabItem>
+</Tabs>
+
+## Specmatic Commercial Offerings
+
+> These tools are part of Specmatic’s commercial suite. Contact Specmatic or visit the product pages for licensing and exact version coordinates.
 
 ### Specmatic OpenAPI
 
-If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
-
-To install the latest version:
-```bash
-irm https://docs.specmatic.io/install-specmatic-openapi.ps1 | iex
-```
-
-To install an older version, replace VERSION with the desired version number from the Releases page.
-```bash
-iex "& { $(irm 'https://docs.specmatic.io/install-specmatic-openapi.ps1') } --version VERSION"
-```
-
+- Docker image: `specmatic/specmatic-openapi`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.openapi`  
+  - Artifact: `specmatic-openapi-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/openapi/specmatic-openapi-all`
 
 ### Specmatic Studio
-If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
 
-To install the latest version:
-```bash
-irm https://docs.specmatic.io/install-specmatic-studio.ps1 | iex
-```
-
-To install an older version, replace VERSION with the desired version number from the Releases page.
-```bash
-iex "& { $(irm 'https://docs.specmatic.io/install-specmatic-studio.ps1') } --version VERSION"
-```
+- Product page: `https://specmatic.io/specmatic-studio/`
+- Docker image: `specmatic/specmatic-studio`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.studio`  
+  - Artifact: `specmatic-studio`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/studio/specmatic-studio`
 
 ### Specmatic Async
 
-<Tabs>
-<TabItem value="docker-unix" label="Docker (Linux / macOS)" default>
-To run the latest version:
-```bash
-docker run -it --rm specmatic/specmatic-async --help
-```
-
-To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
-```bash
-docker run -it --rm -v $HOME/.license:/root/.specmatic specmatic/specmatic-async --help
-```
-For older versions, replace VERSION with the desired version number from the Docker Hub page
-```bash
-docker run -it --rm specmatic/specmatic-async:VERSION --help
-```
-
-</TabItem> <TabItem value="docker-windows" label="Docker (Windows PowerShell)">
-
-
-To run the latest version:
-```bash
-docker run -it --rm specmatic/specmatic-async --help
-```
-
-To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
-
-If running in Powershell, use the following command:
-```bash
-docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/specmatic-async --help
-```
-For older versions, replace VERSION with the desired version number from the Docker Hub page
-```bash
-docker run -it --rm specmatic/specmatic-async:VERSION --help
-```
-</TabItem> 
-
-
-<TabItem value="Linux-macOS" label="Linux/macOS">
-If you have Java 17 or above installed, you can install the executable using the following command and follow the onscreen instructions:
-
-To run the latest version:
-
-```bash
-curl https://docs.specmatic.io/install-specmatic-kafka.sh | bash
-
-```
-To install an older version, replace VERSION with the desired version number from the Releases page.
-```bash
-curl https://docs.specmatic.io/install-specmatic-kafka.sh | bash -- --version VERSION
-
-```
-</TabItem>
-
-
-</Tabs>
-
-
+- Docker image: `specmatic/specmatic-async`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.async`  
+  - Artifact: `specmatic-async-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-async-all`
 
 ### Specmatic Kafka
 
-<Tabs>
+- Product page: `https://specmatic.io/features/kafka-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
+- Docker image: `specmatic/specmatic-kafka`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.async`  
+  - Artifact: `specmatic-kafka-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-kafka-all`
 
+### Specmatic gRPC
 
-<TabItem value="Kafka Docker-linux-macOS" label="Docker Linux/macOS">
-If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:
+- Product page: `https://specmatic.io/features/transform-your-grpc-proto-files-into-executable-contracts-in-seconds-with-specmatic/`
+- Docker image: `specmatic/specmatic-grpc`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.grpc`  
+  - Artifact: `specmatic-grpc-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/grpc/specmatic-grpc-all`
 
-To install the latest version:
+### Specmatic GraphQL
 
-```bash
-irm https://docs.specmatic.io/install-specmatic-kafka.ps1 | iex
-```
-</TabItem>
+- Product page: `https://specmatic.io/features/transform-your-graphql-specs-into-executable-contracts-in-seconds-with-specmatic/`
+- Docker image: `specmatic/specmatic-graphql`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.graphql`  
+  - Artifact: `specmatic-graphql-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/graphql/specmatic-graphql-all`
 
-<TabItem value="Kafka Win-Powershell" label="Docker Win-Powershell">
-To run the latest version:
-```bash
-docker run -it --rm specmatic/specmatic-kafka --help
-```
-To mount the license file when using Docker, use the -v option to map the host directory containing the license file to /root/.specmatic in the container.
+### Specmatic Arazzo
 
-If running in Powershell, use the following command:
+- Product page: `https://specmatic.io/features/author-test-arazzo-api-workflows-drag-drop-simplicity/`
+- Docker image: `specmatic/specmatic-arazzo`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.arazzo`  
+  - Artifact: `specmatic-arazzo-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/arazzo/specmatic-arazzo-all`
 
-```bash
-docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/specmatic-kafka --help
-```
+### Specmatic Redis
 
-For older versions, replace VERSION with the desired version number from the Docker Hub page
-```bash
-docker run -it --rm specmatic/specmatic-kafka:VERSION --help
-```
-</TabItem>
+- Product page: `https://specmatic.io/features/api-resiliency-and-contract-testing-for-resp-redis/`
+- Docker image: `specmatic/specmatic-redis`
+- JAR coordinates (example):  
+  - Group: `io.specmatic.redis`  
+  - Artifact: `specmatic-redis-all`  
+  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/redis/specmatic-redis-all`
 
+### Specmatic JDBC
 
+- Product page: `https://specmatic.io/features/jdbc-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
+- Maven coordinates (example):  
+  - Group: `io.specmatic.jdbc`  
+  - Artifact: `specmatic-jdbc`  
+  - Version: see Specmatic JDBC documentation or repository.
 
+### Specmatic JMS
 
+- Product page: `https://specmatic.io/features/jms-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
+- Maven coordinates (example):  
+  - Group: `io.specmatic.jms`  
+  - Artifact: `specmatic-jms`  
+  - Version: see Specmatic JMS documentation or repository.
 
-</Tabs>
+### Specmatic Google Pub/Sub
+
+- Product page: `https://specmatic.io/features/google-pubsub-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
+- Maven coordinates (example):  
+  - Group: `io.specmatic.googlepubsub`  
+  - Artifact: `specmatic-google-pubsub`  
+  - Version: see Specmatic Google Pub/Sub documentation or repository.
+

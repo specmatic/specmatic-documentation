@@ -1,15 +1,13 @@
 ---
-id: external_examples
 title: External Examples
-sidebar_label: External Examples
 sidebar_position: 3
 ---
-
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-import Admonition from '@theme/Admonition';
+
 
 # External Examples
+
 
 ## Introduction
 
@@ -92,40 +90,42 @@ components:
           type: string
 ```
 
-## Interactive Examples GUI
-
-<Admonition type="info">
-Commercial Feature
-</Admonition>
+## Interactive Examples GUI <span className="badge badge--primary" style={{ fontSize: '0.75rem' }}> Commercial </span>
 
 To start the GUI execute below command,
+<Tabs groupId="examples-gui">
 
-<Tabs>
-<TabItem value="docker" label="Docker">
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run --rm -v "$(pwd):/specs" -p "9001:9001" specmatic/specmatic-openapi examples interactive --spec-file /specs/employee_details.yaml
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic-openapi.jar examples interactive --spec-file employee_details.yaml
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 You can then click on the link in the console, or by visiting http://localhost:9001/_specmatic/examples
 
 ### Generating and Updating Examples
 
-![Generate](/img/gui-generate.png)
+> ![Generate](/img/gui-generate.png)
 
 The generated files will be saved alongside your specification in a `{specification-name}_examples` directory. In this case it will be `employee_details_examples` directory.
 
-![View details](/img/gui-more-details.png)
+> ![View details](/img/gui-more-details.png)
 
 View details section will give additional info and a live code editor to make changes in the generated example.
 
-![Update](/img/gui-update.png)
+> ![Update](/img/gui-update.png)
 
 This page will help you to edit, update, validate, fix and save your examples.
 
@@ -133,19 +133,17 @@ This page will help you to edit, update, validate, fix and save your examples.
 
 You can validate one example at a time (as we saw above), or you validate them in bulk.
 
-![Validate](/img/gui-validate.png)
+> ![Validate](/img/gui-validate.png)
 
 ### Fixing Examples
 
-![Fix](/img/gui-fix.png)
+> ![Fix](/img/gui-fix.png)
 
-![After Fix](/img/gui-after-fix.png)
+> ![After Fix](/img/gui-after-fix.png)
 
 Fix can also be done in bulk (similar to validate).
 
-<Admonition type="note">
 The Interactive Examples GUI is only available in the commercial version of Specmatic. Please visit the [pricing page](https://specmatic.io/pricing/) for more information.
-</Admonition>
 
 ## Creating Examples Manually
 
@@ -186,17 +184,24 @@ For complete example format, please refer to [Example Format](#example-format).
 
 While you have done the validation in Interactive Examples GUI, You can also run it in a non-interactive manner which is useful for e.g. CI Pipelines, [PR Pre-Merge Checks](https://github.com/specmatic/specmatic-order-contracts/blob/abb92cc3e9acabeb420abc7ca233492e2581cc18/.github/workflows/pull_request_merge_checks.yaml#L66C1-L70C100) etc. In a non-interactive manner Specmatic will exit with a `non-zero` exit-code in case of validation failure, and `0` in case of successful validation.
 
-<Tabs>
-<TabItem value="docker" label="Docker">
+<Tabs groupId="examples-validate">
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run -v "$(pwd)/:/specs" specmatic/specmatic examples validate --spec-file "/specs/employee_details.yaml"
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic.jar examples validate --spec-file employee_details.yaml
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 ## Example Format
@@ -260,6 +265,7 @@ Examples can be externalized to `json` files as seen in the above section, You w
 
 1. In contract tests, only the `status` field is required. Other fields will be ignored if provided such as headers, body etc.
 
+
 ## Using Dictionary Values In Examples
 
 You can populate specific values in an example and allow Specmatic to reference the dictionary for the remaining values.
@@ -308,22 +314,32 @@ Employee:
 
 Start the stub server with the following command:
 
-<Tabs>
-<TabItem value="java" label="Java">
+<Tabs groupId="test">
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic.jar stub employee_details.yaml
 ```
-</TabItem>
-<TabItem value="npm" label="NPM">
+
+  </TabItem>
+
+  <TabItem value="npm" label="npm">
+
 ```shell
 npx specmatic stub employee_details.yaml
 ```
-</TabItem>
-<TabItem value="docker" label="Docker">
+
+  </TabItem>
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run --rm -p 9000:9000 -v "$(pwd)/employee_details.yaml:/usr/src/app/employee_details.yaml" -v "$(pwd)/employee_details_examples:/usr/src/app/employee_details_examples" -v "$(pwd)/employee_details_dictionary.yaml:/usr/src/app/employee_details_dictionary.yaml" specmatic/specmatic stub "employee_details.yaml"
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 #### Making a PATCH Request
@@ -345,10 +361,8 @@ Observe the following response:
 }
 ```
 
-<Admonition type="note">
 While the example provided specific values for `name`, `department`, and `designation`, the fields for `id` and `employeeCode` were not explicitly defined.
 As such, the values returned for those fields were derived from the dictionary.
-</Admonition>
 
 ## Working with Multiple Specifications
 
@@ -373,56 +387,135 @@ For a single specification, you can specify a custom examples directory:
 specmatic examples validate --spec-file employee_details.yaml --examples-dir ./custom-examples
 ```
 
-## Identifying Examples with Competing Requests
+## Identifying Examples with Competing Requests <span className="badge badge--primary" style={{ fontSize: '0.55rem' }}> Commercial </span>
 
-<Admonition type="info">
-Commercial Feature
-</Admonition>
-
-When using multiple examples, it's important to ensure each request is unique.
+When using multiple examples, it's important to ensure each request is unique. 
 
 If the same incoming request appears in multiple examples having different responses (e.g., one returns HTTP 200 and another HTTP 400), then Specmatic stub server will arbitrarily pick one of the examples matching the incoming request and serve its response, ignoring the others. The user may not even realise that there are multiple examples matching the incoming request. Thus, the response from Specmatic stub may not be the one that the user expects, resulting in confusion.
 
 You can detect such issues with competing example requests early by using Specmatic to validate your examples.
 
-Let's try the validation out.
+Let's try the validation out. 
 
 ### Competing Requests by Identical Values
 
-We will continue to use the `employee_details.yaml` [spec from above](#creating-validating-and-fixing-examples).
+We will continue to use the `employee_details.yaml` [spec from above](/features/external_examples#creating-validating-and-fixing-examples).
 
 **1.** Create following examples with the same request but a different response in the directory `employee_details_examples`:
 
-| employees_PATCH_200.json | employees_PATCH_400.json |
-|--------------------------|--------------------------|
-| ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 200,<br />    "body": {<br />      "id": 10,<br />      "employeeCode": "pqrxyz",<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  }<br />}<br />``` | ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 400,<br />    "body": {<br />      "message": "Invalid value"<br />    }<br />  }<br />}<br />``` |
+<table>
+  <thead>
+    <tr>
+      <th>employees_PATCH_200.json</th>
+      <th>employees_PATCH_400.json</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 200,
+            "body": {
+              "id": 10,
+              "employeeCode": "pqrxyz",
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          }
+        }
+```
+      </td>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 400,
+            "body": {
+              "message": "Invalid value"
+            }
+          }
+        }
+```
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Let's first analyse if the requests defined in examples above competes for any incoming requests.
 
-| Incoming request with body | Do the requests defined in above examples compete for this request? |
-|----------------------------|---------------------------------------------------------------------|
-| ```json<br />{<br />  "name": "Jamie",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **Yes** <br/> Specmatic finds that the incoming request matches exactly the requests defined in `employees_PATCH_200.json` and `employees_PATCH_400.json` |
+<table>
+  <thead>
+    <tr>
+      <th>Incoming request with body</th>
+      <th>Do the requests defined in above examples compete for this request?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Jamie",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>Yes</strong> <br/>
+        Specmatic finds that the incoming request matches exactly the requests defined in <code>employees_PATCH_200.json</code>and <code>employees_PATCH_400.json</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Use following command to detect such competing requests in examples.
 
 **2.** Validate your examples:
 
-<Tabs>
-<TabItem value="docker" label="Docker">
+<Tabs groupId="competing-examples">
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run -v "$(pwd)/:/specs" specmatic/specmatic-openapi examples validate --spec-file "/specs/employee_details.yaml"
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic-openapi.jar examples validate --spec-file employee_details.yaml
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 On detecting competing requests while validating examples, Specmatic exits with a non-zero exit code after printing the following error:
 
-<Admonition type="danger">
 ```log
 ERROR: Competing requests detected in the given examples
   This may have consequences
@@ -438,45 +531,167 @@ ERROR: Competing requests detected in the given examples
 
           Which example should Specmatic pick to send the response?
 ```
-</Admonition>
 
 ### Competing Requests by Identical Data Type Values
 
-Similar to [Competing Requests by Identical Values](#competing-requests-by-identical-values), lets see how [data type-based examples](/contract_driven_development/service_virtualization.html#data-type-based-examples) could end up competing for some incoming requests.
+Similar to [Competing Requests by Identical Values](/features/external_examples#competing-requests-by-identical-values), lets see how [data type-based examples](/contract_driven_development/service_virtualization#data-type-based-examples) could end up competing for some incoming requests.
 
 **1.** Create following examples with the same request but a different response in the directory `employee_details_examples`:
 
-| employees_PATCH_200_concrete_name.json | employees_PATCH_200_any_name.json | employees_PATCH_400_any_name.json |
-|----------------------------------------|-----------------------------------|-----------------------------------|
-| ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 200,<br />    "body": {<br />      "id": 10,<br />      "employeeCode": "pqrxyz",<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  }<br />}<br />``` | ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "(string)",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 200,<br />    "body": {<br />      "id": 20,<br />      "employeeCode": "abcpqr",<br />      "name": "Jack",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  }<br />}<br />``` | ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "(string)",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 400,<br />    "body": {<br />      "message": "Invalid value"<br />    }<br />  }<br />}<br />``` |
+<table>
+  <thead>
+    <tr>
+      <th>employees_PATCH_200_concrete_name.json</th>
+      <th>employees_PATCH_200_any_name.json</th>
+      <th>employees_PATCH_400_any_name.json</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 200,
+            "body": {
+              "id": 10,
+              "employeeCode": "pqrxyz",
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          }
+        }
+```
+      </td>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "(string)",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 200,
+            "body": {
+              "id": 20,
+              "employeeCode": "abcpqr",
+              "name": "Jack",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          }
+        }
+```
+      </td>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "(string)",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 400,
+            "body": {
+              "message": "Invalid value"
+            }
+          }
+        }
+```
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Let's first analyse if the requests defined in examples above competes for any incoming requests.
 
-| Incoming request with body | Do the requests defined in above examples compete for this request? |
-|----------------------------|---------------------------------------------------------------------|
-| ```json<br />{<br />  "name": "Jamie",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **NO**<br/>Specmatic considers the request in `employees_PATCH_200_concrete_name.json` to be a more precise match for the incoming request than the requests defined in the other two: `employees_PATCH_200_any_name.json` and `employees_PATCH_400_any_name.json` |
-| ```json<br />{<br />  "name": "Jack",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **Yes** <br/>Specmatic finds that the incoming request does not match the one in `employees_PATCH_200_concrete_name.json`, but matches those defined in both `employees_PATCH_200_any_name.json` and `employees_PATCH_400_any_name.json` |
+<table>
+  <thead>
+    <tr>
+      <th>Incoming request with body</th>
+      <th>Do the requests defined in above examples compete for this request?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Jamie",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>NO</strong><br/>
+        Specmatic considers the request in <code>employees_PATCH_200_concrete_name.json</code> to be a more precise match for the incoming request than the requests defined in the other two: <code>employees_PATCH_200_any_name.json</code> and <code>employees_PATCH_400_any_name.json</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Jack",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>Yes</strong> <br/>
+        Specmatic finds that the incoming request does not match the one in <code>employees_PATCH_200_concrete_name.json</code>, but matches those defined in both <code>employees_PATCH_200_any_name.json</code> and <code>employees_PATCH_400_any_name.json</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Use following command to detect such competing requests in examples.
 
 **2.** Validate your examples:
 
-<Tabs>
-<TabItem value="docker" label="Docker">
+<Tabs groupId="competing-examples">
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run -v "$(pwd)/:/specs" specmatic/specmatic-openapi examples validate --spec-file "/specs/employee_details.yaml"
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic-openapi.jar examples validate --spec-file employee_details.yaml
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 On detecting competing requests while validating examples, Specmatic exits with a non-zero exit code after printing the following error:
 
-<Admonition type="danger">
 ```log
 ERROR: Competing requests detected in the given examples
   This may have consequences
@@ -500,48 +715,198 @@ ERROR: Competing requests detected in the given examples
 
           Which example should Specmatic pick to send the response?
 ```
-</Admonition>
 
 ### Competing Requests by Overlapping Data Type Values
 
-Now, unlike [Competing Requests by Identical Data Type Values](#competing-requests-by-identical-data-type-values)
-lets see how [data type based examples](/contract_driven_development/service_virtualization.html#data-type-based-examples) could end up competing for incoming request in spite of assigning data type to different keys in the request.
+Now, unlike [Competing Requests by Identical Data Type Values](/features/external_examples#competing-requests-by-identical-data-type-values)
+lets see how [data type based examples](/contract_driven_development/service_virtualization#data-type-based-examples) could end up competing for incoming request in spite of assigning data type to different keys in the request.
 
 **1.** Create following examples with the same request but a different response in the directory  `employee_details_examples`:
 
-| employees_PATCH_200_concrete_values.json | employees_PATCH_200_any_name.json | employees_PATCH_400_any_designation.json |
-|------------------------------------------|-----------------------------------|------------------------------------------|
-| ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 200,<br />    "body": {<br />      "id": 10,<br />      "employeeCode": "pqrxyz",<br />      "name": "Jamie",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  }<br />}<br />``` | ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "(string)",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  },<br />  "http-response": {<br />    "status": 200,<br />    "body": {<br />      "id": 30,<br />      "employeeCode": "abcpqr",<br />      "name": "Ralph",<br />      "department": "Backend",<br />      "designation": "Engineer"<br />    }<br />  }<br />}<br />``` | ```json<br />{<br />  "http-request": {<br />    "method": "PATCH",<br />    "path": "/employees",<br />    "body": {<br />      "name": "Tom",<br />      "department": "Backend",<br />      "designation": "(string)"<br />    }<br />  },<br />  "http-response": {<br />    "status": 400,<br />    "body": {<br />      "message": "Invalid value"<br />    }<br />  }<br />}<br />``` |
+<table>
+  <thead>
+    <tr>
+      <th>employees_PATCH_200_concrete_values.json</th>
+      <th>employees_PATCH_200_any_name.json</th>
+      <th>employees_PATCH_400_any_designation.json</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 200,
+            "body": {
+              "id": 10,
+              "employeeCode": "pqrxyz",
+              "name": "Jamie",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          }
+        }
+```
+      </td>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "(string)",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          },
+          "http-response": {
+            "status": 200,
+            "body": {
+              "id": 30,
+              "employeeCode": "abcpqr",
+              "name": "Ralph",
+              "department": "Backend",
+              "designation": "Engineer"
+            }
+          }
+        }
+```
+      </td>
+      <td>
+        ```json
+{
+          "http-request": {
+            "method": "PATCH",
+            "path": "/employees",
+            "body": {
+              "name": "Tom",
+              "department": "Backend",
+              "designation": "(string)"
+            }
+          },
+          "http-response": {
+            "status": 400,
+            "body": {
+              "message": "Invalid value"
+            }
+          }
+        }
+```
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Let’s first analyse if the requests defined in examples above competes for any incoming requests.
 
-| Incoming request with body | Do the requests defined in above examples compete for this request? |
-|----------------------------|---------------------------------------------------------------------|
-| ```json<br />{<br />  "name": "Jamie",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **No** <br/>Specmatic considers the request in `employees_PATCH_200_concrete_values.json` to be more precise than the requests defined in the other two: `employees_PATCH_200_any_name.json` and `employees_PATCH_400_any_designation.json` |
-| ```json<br />{<br />  "name": "Ralph",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **No** <br/>Specmatic considers the request defined in `employees_PATCH_200_any_name.json` to be the single most precise match for the incoming request |
-| ```json<br />{<br />  "name": "Tom",<br />  "department": "Backend",<br />  "designation": "Administrator"<br />}<br />``` | **No** <br/>Specmatic considers the request defined in `employees_PATCH_200_any_designation.json` to be the single most precise example for this incoming request |
-| ```json<br />{<br />  "name": "Tom",<br />  "department": "Backend",<br />  "designation": "Engineer"<br />}<br />``` | **Yes** <br/>Specmatic finds that the incoming request does not match the one in `employees_PATCH_200_concrete_values.json`, but does match those defined in both `employees_PATCH_200_any_name.json` and `employees_PATCH_400_any_designation.json` |
+<table>
+  <thead>
+    <tr>
+      <th>Incoming request with body</th>
+      <th>Do the requests defined in above examples compete for this request?</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Jamie",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>No</strong> <br/>
+        Specmatic considers the request in <code>employees_PATCH_200_concrete_values.json</code> to be more precise than the requests defined in the other two: <code>employees_PATCH_200_any_name.json</code> and <code>employees_PATCH_400_any_designation.json</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Ralph",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>No</strong> <br/>
+        Specmatic considers the request defined in <code>employees_PATCH_200_any_name.json</code> to be the single most precise match for the incoming request
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Tom",
+          "department": "Backend",
+          "designation": "Administrator"
+        }
+```
+      </td>
+      <td>
+        <strong>No</strong> <br/>
+        Specmatic considers the request defined in <code>employees_PATCH_200_any_designation.json</code> to be the single most precise example for this incoming request
+      </td>
+    </tr>
+    <tr>
+      <td>
+        ```json
+{
+          "name": "Tom",
+          "department": "Backend",
+          "designation": "Engineer"
+        }
+```
+      </td>
+      <td>
+        <strong>Yes</strong> <br/>
+        Specmatic finds that the incoming request does not match the one in <code>employees_PATCH_200_concrete_values.json</code>, but does match those defined in both <code>employees_PATCH_200_any_name.json</code> and <code>employees_PATCH_400_any_designation.json</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Use following command to detect such competing requests in examples.
 
 **2.** Validate your examples:
 
-<Tabs>
-<TabItem value="docker" label="Docker">
+<Tabs groupId="competing-examples">
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run -v "$(pwd)/:/specs" specmatic/specmatic-openapi examples validate --spec-file "/specs/employee_details.yaml"
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic-openapi.jar examples validate --spec-file employee_details.yaml
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
 
 On detecting competing requests while validating examples, Specmatic exits with a non-zero exit code after printing the following error:
 
-<Admonition type="danger">
 ```log
 ERROR: Competing requests detected in the given examples
   This may have consequences
@@ -568,11 +933,8 @@ ERROR: Competing requests detected in the given examples
 
           Which example should Specmatic pick to send the response?
 ```
-</Admonition>
 
-<Admonition type="tip">
 Specmatic will detect competing requests not just for the request body, but also for query parameters, request path, and headers. <br/><br/> Try out different combinations in your examples to see how Specmatic handles them across all parts of the request.
-</Admonition>
 
 ### Lenient mode
 
@@ -580,7 +942,6 @@ To treat such competing example issues as a warning instead of an error, use the
 
 For example, the error above in lenient mode will produce the following output:
 
-<Admonition type="success">
 ```log
 WARNING: Competing requests detected in the given examples
   This may have consequences
@@ -607,11 +968,8 @@ WARNING: Competing requests detected in the given examples
 
           Which example should Specmatic pick to send the response?
 ```
-</Admonition>
 
-<Admonition type="note">
 While validation of examples for schema correctness is available in [Specmatic](https://github.com/specmatic/specmatic) open-source version, detection of competing examples as part of validation is only available in the commercial version of Specmatic. Please visit the [pricing page](https://specmatic.io/pricing/) for more information.
-</Admonition>
 
 ## Pro Tips
 - Use `--specs-dir` with `--examples-base-dir` when managing multiple APIs to keep your examples organized
@@ -619,15 +977,22 @@ While validation of examples for schema correctness is available in [Specmatic](
 - The validation command will exit with code `1` if any examples are out of sync, making it perfect for CI/CD pipelines
 
 Need more details? Run the help command:
-<Tabs>
-<TabItem value="docker" label="Docker">
+<Tabs groupId="examples-validate">
+
+  <TabItem value="docker" label="docker">
+
 ```shell
 docker run specmatic/specmatic examples validate --help
 ```
-</TabItem>
-<TabItem value="java" label="Java">
+
+  </TabItem>
+
+  <TabItem value="java" label="java">
+
 ```shell
 java -jar specmatic.jar examples validate --help
 ```
-</TabItem>
+
+  </TabItem>
+
 </Tabs>
