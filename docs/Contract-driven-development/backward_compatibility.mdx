@@ -28,7 +28,7 @@ The new command has been overhauled to be more intuitive and supports a wider ra
 - Comprehensive support for OpenAPI, gRPC, and GraphQL.
 - Simplified usage with smarter messages to help.
 
-> **Note:** [Older commands](#backward-compatibility-commands-deprecated) for backward compatibility will be deprecated soon. We recommend switching to the new command to make the most of its improved capabilities.
+> **Note:** Older commands for backward compatibility will be deprecated soon. We recommend switching to the new command to make the most of its improved capabilities.
 
 # How it works
 
@@ -362,17 +362,17 @@ Once the specification is complete you can remove the WIP tag.
 
 Maintaining backward compatibility is about changing the API provider WITHOUT breaking any existing consumer. Consumers should just continue working as-is, without needing to "keep up".
 
-[Read this for more](/contract_driven_development/backward_compatibility_rules).
+[Read this for more](./backward_compatibility_rules).
 
 
 > [!IMPORTANT]
-> All the existing commands for backward compatibility (listed in the following sections) will be phased out in our next major release. We highly recommend transitioning to the more robust [`backward-compatibility-check`](#using-backward-compatibility) command to future-proof your development process.
+> All the existing commands for backward compatibility (listed in the following sections) will be phased out in our next major release. We highly recommend transitioning to the more robust `backward-compatibility-check` command to future-proof your development process.
 
 # Backward Compatibility Commands (Deprecated)
 
 ## Comparing Two Contracts (Deprecated)
 
-> **Note:** The following command will be deprecated soon. We recommend switching to the [new command](#using-backward-compatibility) to make the most of its improved capabilities.
+> **Note:** The following command will be deprecated soon. We recommend switching to the new command to make the most of its improved capabilities.
 
 Create a file named api_products_v1.yaml.
 
@@ -605,7 +605,7 @@ If the change is not backward compatible, the compare command exits with exit co
 
 ## Validating Changes In Git On Your Laptop (Deprecated)
 
-> **Note:** The following command will be deprecated soon. We recommend switching to the [new command](#using-backward-compatibility) to make the most of its improved capabilities.
+> **Note:** The following command will be deprecated soon. We recommend switching to the new command to make the most of its improved capabilities.
 
 If `api_products_v1.yaml` is part of a git repository, changes can be made directly to this file instead of creating a new one.
 
@@ -641,7 +641,7 @@ The newer contract is backward compatible
 
 ## Validating Changes In CI (Deprecated)
 
-> **Note:** The following command will be deprecated soon. We recommend switching to the [new command](#using-backward-compatibility) to make the most of its improved capabilities.
+> **Note:** The following command will be deprecated soon. We recommend switching to the new command to make the most of its improved capabilities.
 
 In CI, you will need to compare the changes in a contract from one commit to the next.
 

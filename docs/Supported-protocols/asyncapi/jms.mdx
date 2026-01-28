@@ -132,7 +132,7 @@ jmsMock.start()
 
 </Tabs>
 
-If you have the [Specmatic Config](/references/configuration) set up, you can define the specifications in the `consumes` section and utilize `JmsMock.create(host, port)` in your test setup to create the JMS mock.
+If you have the [Specmatic Config](../../references/configuration) set up, you can define the specifications in the `consumes` section and utilize `JmsMock.create(host, port)` in your test setup to create the JMS mock.
 
 This will start the JMS server running on port: 61616 on localhost.
 
@@ -238,7 +238,7 @@ jmsMock.stop()
 
 ### Inject an ActiveMQ JMS client using JNDI
 
-Create a new [TestInitialContextFactory.java](jms-stub-code/TestInitialContextFactory.java) file into src/test/jms package.
+Create a new `TestInitialContextFactory.java` file into src/test/jms package.
 
 This will create an ActiveMQ server with which clients can interact.
 

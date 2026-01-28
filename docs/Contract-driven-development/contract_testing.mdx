@@ -14,7 +14,7 @@ Contract Testing
 
 ### Overview
 
-As seen in "[getting started](/getting_started/cli_quick_start#provider-side---contract-as-a-test)" Specmatic is able to leverage your API Specifications as "Contract Tests" to verify if your application is adhering the specification. This step is critical in making sure that your application / provider is honouring its side of the contract in the "Contract Driven Development" process. Similar to how consumers build against a smart mock that is based the same OpenAPI Specification.
+As seen in "[getting started](../Getting%20Started/cli-quick-start#provider-side---contract-as-a-test)" Specmatic is able to leverage your API Specifications as "Contract Tests" to verify if your application is adhering the specification. This step is critical in making sure that your application / provider is honouring its side of the contract in the "Contract Driven Development" process. Similar to how consumers build against a smart mock that is based the same OpenAPI Specification.
 
 ### Specmatic Contract Test - Command Line
 
@@ -153,7 +153,7 @@ Here is a sample application that is implementing this specification. You can ru
 Let us now run the ```employees.yaml``` as a test against the above sample application.
 
 ```bash
-<!-- TODO: Liquid variable removed: {{ site.spec_cmd }} --> test employees.yaml --testBaseURL https://my-json-server.typicode.com
+specmatic test employees.yaml --testBaseURL https://my-json-server.typicode.com
 ```
 
 Alternatively, we can also run the same command with the Docker image:
@@ -189,7 +189,7 @@ Thus, the request and response examples named `FETCH_EMPLOYEE_SUCCESS` taken tog
 
 Note that the response example named `FETCH_EMPLOYEE_SUCCESS` is not compared with values returned by the application. This is what sets a Contract Test apart from an API Test. A Contract Test is concerned with checking the APIs signature, while API tests are concerned with checking the APIs logic.
 
-However, the response example named `FETCH_EMPLOYEE_SUCCESS` is verified and used in [service virtualization](/contract_driven_development/service_virtualization#inline-examples).
+However, the response example named `FETCH_EMPLOYEE_SUCCESS` is verified and used in [service virtualization](./service_virtualization#inline-examples).
 
 ### Externalising examples / test cases
 
@@ -206,7 +206,7 @@ Let us now run `employees.yaml` as a test against the sample application.
 Here’s how you can present that command with `site.spec_cmd` and the Docker alternative in Bash format:
 
 ```bash
-<!-- TODO: Liquid variable removed: &#123;&#123; site.spec_cmd &#125;&#125; --> test --testBaseURL https://my-json-server.typicode.com employees.yaml
+specmatic test --testBaseURL https://my-json-server.typicode.com employees.yaml
 ```
 
 Alternatively, we can also run the same command with the Docker image:
@@ -221,7 +221,7 @@ The test results will look as shown below. Specmatic has run one test per extern
 
 ```Tests run: 5, Successes: 5, Failures: 0, Errors: 0```
 
-The complete test data format can be referred to [here](/features/external_examples#example-format).
+The complete test data format can be referred to [here](../Features/external_example3#example-format).
 
 ### Generating examples
 
@@ -235,10 +235,10 @@ In the above case, example JSON files will be written into the directory named `
 
 ### Strict Mode
 
-By default, Specmatic generates tests for an API when there are no examples. However, if you want to skip test generation from APIs for which there are no examples, you can enable strict mode using configuration as described [here](/references/configuration/stub-configuration#strict-mode), or using the `--strict` command-line parameter as shown below:
+By default, Specmatic generates tests for an API when there are no examples. However, if you want to skip test generation from APIs for which there are no examples, you can enable strict mode using configuration as described [here](../references/configuration/stub-configuration#strict-mode), or using the `--strict` command-line parameter as shown below:
 
 ```bash
-<!-- TODO: Liquid variable removed: {{ site.spec_cmd }} --> test --testBaseURL https://my-json-server.typicode.com --strict employees.yaml
+specmatic test --testBaseURL https://my-json-server.typicode.com --strict employees.yaml
 ```
 
 Alternatively, we can also run the same command with the Docker image:
@@ -256,7 +256,7 @@ Specmatic can help you verify / assess such boundary condition behavior and the 
 ```export SPECMATIC_GENERATIVE_TESTS=true```
 
 ```bash
-<!-- TODO: Liquid variable removed: &#123;&#123; site.spec_cmd &#125;&#125; --> test --testBaseURL https://my-json-server.typicode.com employees.yaml
+specmatic test --testBaseURL https://my-json-server.typicode.com employees.yaml
 ```
 
 Alternatively, we can also run the same command with the Docker image:
@@ -657,7 +657,7 @@ Since it is a JUnit5 test, you can run it in all the ways you are used to. If yo
 
 ### Handling Application authentication
 
-If the OpenAPI contract defines API authentication using security schemas, these information will be used by Specmatic when running contract tests. Read more about it on the page on [authentication](/features/authentication).
+If the OpenAPI contract defines API authentication using security schemas, these information will be used by Specmatic when running contract tests. Read more about it on the page on [authentication](../Features/authentication).
 
 ### Authentication In CI For HTTPS Git Source
 
@@ -962,7 +962,7 @@ Note the quotes around the name, which are necessary because of the space requir
 
 When the test for this example runs, it will log the run details and failures without breaking the build. In the test report, it shows up as `WIP`. However, the use of `WIP` does not bypass the contract validation, the contract itself should be in valid state.
 
-Also, please note that this use of `[WIP]` differs from the WIP tags given [here](/contract_driven_development/backward_compatibility#handling-changes-in-progress). WIP tags can be applied to the path/endpoint, while this works only on example names.
+Also, please note that this use of `[WIP]` differs from the WIP tags given [here](./backward_compatibility#handling-changes-in-progress). WIP tags can be applied to the path/endpoint, while this works only on example names.
 
 ### Examples that trigger 400 responses
 
@@ -1195,7 +1195,7 @@ The data from the coverage report is saved to a file located at `build/reports/s
 ## Overlays
 Specmatic supports overlays to modify API specifications at runtime without changing the original specification files. Overlays are useful when you want to add or modify certain aspects of the API specification for specific testing scenarios.
 
-More details on overlays can be found in the [Overlays Documentation](/features/overlays).
+More details on overlays can be found in the [Overlays Documentation](../Features/overlays).
 
 ## Hooks
 
@@ -1434,7 +1434,7 @@ This approach:
 - Accurately tests backend service requirements
 - Simulates API Gateway behavior in your test environment
 
-> **Note:** If you're looking to modify headers during service virtualization using Specmatic's `stub` command, then please refer to stub-specific header modifications documentation : [Using Hooks during Stub Creation](/contract_driven_development/service_virtualization#hooks)
+> **Note:** If you're looking to modify headers during service virtualization using Specmatic's `stub` command, then please refer to stub-specific header modifications documentation : [Using Hooks during Stub Creation](./service_virtualization#hooks)
 
 ### Conclusion
 
@@ -1888,7 +1888,7 @@ System.setProperty("MAX_TEST_REQUEST_COMBINATIONS", "2");
 
 Specmatic can be configured to use a branch of the central repo with the same name as the branch that is locally checked out.
 
-More details [here](/contract_driven_development/service_virtualization#using-matching-branches-in-the-central-contract-repo).
+More details [here](./service_virtualization#using-matching-branches-in-the-central-contract-repo).
 
 ### Sample Project
 
