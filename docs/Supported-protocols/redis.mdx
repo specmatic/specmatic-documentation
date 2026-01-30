@@ -4,7 +4,8 @@ sidebar_position: 5
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
-
+import { VERSIONS } from '../../src/constants/versions';
+import CodeBlock from '@theme/CodeBlock';
 
 # Redis Stubbing <span className="badge badge--primary" style={{ fontSize: '0.75rem' }}> Commercial </span>
 
@@ -22,22 +23,22 @@ The following dependency needs to be added to your application's `build.gradle` 
 
   <TabItem value="maven" label="maven">
 
-```xml
-<dependency>
+<CodeBlock language="xml">
+{`<dependency>
     <groupId>io.specmatic</groupId>
     <artifactId>specmatic-redis</artifactId>
     <scope>test</scope>
-    <version><!-- TODO: Liquid variable removed: {{ site.specmatic-redis-version }} --></version>
-</dependency>
-```
+    <version>${VERSIONS["specmatic-redis-version"]}</version>
+</dependency>`}
+</CodeBlock>
 
   </TabItem>
 
   <TabItem value="gradle" label="gradle">
 
-```shell
-testImplementation("io.specmatic:specmatic-redis:<!-- TODO: Liquid variable removed: {{ site.specmatic-redis-version }} -->")
-```
+<CodeBlock language="shell">
+{`testImplementation("io.specmatic:specmatic-redis:${VERSIONS["specmatic-redis-version"]}")`}
+</CodeBlock>
 
   </TabItem>
 

@@ -1,7 +1,9 @@
 ---
 title: Migrating to specmatic-async
 sidebar_position: 11
+sidebar_label: Migrating to specmatic-async
 ---
+
 # Migrating from `specmatic-kafka` to `specmatic-async`
 
 Migrating to `specmatic-async` unlocks multi-protocol support, improved configuration, and a unified approach to async contract testing and mocking. This guide walks you through the key steps for a smooth transition.
@@ -107,11 +109,11 @@ jobs:
           cat > specmatic-kafka-config.properties << EOF
           schema.registry.url=http://localhost:8085
           basic.auth.credentials.source=USER_INFO
-          basic.auth.user.info=$<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_USER }} -->:$<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_PASSWORD }} -->
+          basic.auth.user.info=${{ secrets.SCHEMA_REGISTRY_USER }}:${{ secrets.SCHEMA_REGISTRY_PASSWORD }}
           bootstrap.servers=localhost:9092
           security.protocol=SASL_PLAINTEXT
           sasl.mechanism=PLAIN
-          sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="$<!-- TODO: Liquid variable removed: {{ secrets.KAFKA_USER }} -->" password="$<!-- TODO: Liquid variable removed: {{ secrets.KAFKA_PASSWORD }} -->";
+          sasl.jaas.config=org.apache.kafka.common.security.plain.PlainLoginModule required username="${{ secrets.KAFKA_USER }}" password="${{ secrets.KAFKA_PASSWORD }}";
           EOF
       
       - name: Run Contract Tests
@@ -149,19 +151,19 @@ jobs:
                         adminCredentials:
                           security.protocol: SASL_PLAINTEXT
                           sasl.mechanism: PLAIN
-                          sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="$<!-- TODO: Liquid variable removed: {{ secrets.KAFKA_USER }} -->" password="$<!-- TODO: Liquid variable removed: {{ secrets.KAFKA_PASSWORD }} -->";
+                          sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="${{ secrets.KAFKA_USER }}" password="${{ secrets.KAFKA_PASSWORD }}";
                         client:
                           producer:
                             basic.auth.credentials.source: USER_INFO
-                            basic.auth.user.info: $<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_USER }} -->:$<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_PASSWORD }} -->
+                            basic.auth.user.info: ${{ secrets.SCHEMA_REGISTRY_USER }}:${{ secrets.SCHEMA_REGISTRY_PASSWORD }}
                           consumer:
                             basic.auth.credentials.source: USER_INFO
-                            basic.auth.user.info: $<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_USER }} -->:$<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_PASSWORD }} -->
+                            basic.auth.user.info: ${{ secrets.SCHEMA_REGISTRY_USER }}:${{ secrets.SCHEMA_REGISTRY_PASSWORD }}
                     schemaRegistry:
                       kind: CONFLUENT
                       url: http://localhost:8085
-                      username: $<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_USER }} -->
-                      password: $<!-- TODO: Liquid variable removed: {{ secrets.SCHEMA_REGISTRY_PASSWORD }} -->
+                      username: ${{ secrets.SCHEMA_REGISTRY_USER }}
+                      password: ${{ secrets.SCHEMA_REGISTRY_PASSWORD }}
           EOF
       
       - name: Run Contract Tests

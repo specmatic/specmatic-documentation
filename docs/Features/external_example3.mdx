@@ -143,7 +143,9 @@ You can validate one example at a time (as we saw above), or you validate them i
 
 Fix can also be done in bulk (similar to validate).
 
+:::note
 The Interactive Examples GUI is only available in the commercial version of Specmatic. Please visit the [pricing page](https://specmatic.io/pricing/) for more information.
+:::
 
 ## Creating Examples Manually
 
@@ -933,8 +935,9 @@ ERROR: Competing requests detected in the given examples
 
           Which example should Specmatic pick to send the response?
 ```
-
+:::tip
 Specmatic will detect competing requests not just for the request body, but also for query parameters, request path, and headers. <br/><br/> Try out different combinations in your examples to see how Specmatic handles them across all parts of the request.
+:::
 
 ### Lenient mode
 
@@ -969,7 +972,9 @@ WARNING: Competing requests detected in the given examples
           Which example should Specmatic pick to send the response?
 ```
 
+:::note
 While validation of examples for schema correctness is available in [Specmatic](https://github.com/specmatic/specmatic) open-source version, detection of competing examples as part of validation is only available in the commercial version of Specmatic. Please visit the [pricing page](https://specmatic.io/pricing/) for more information.
+:::
 
 ## Pro Tips
 - Use `--specs-dir` with `--examples-base-dir` when managing multiple APIs to keep your examples organized

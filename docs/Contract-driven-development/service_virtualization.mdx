@@ -4,6 +4,8 @@ sidebar_position: 2
 ---
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CodeBlock from '@theme/CodeBlock';
+import { VERSIONS } from '@site/src/constants/versions';
 
 Service Virtualization
 ======================
@@ -1063,7 +1065,7 @@ Specmatic stub server can accept expectation json through below http endpoint.
 http://localhost:9000/_specmatic/expectations
 ```
 
-Please see <a href="pathname://contract_driven_development/SpecmaticExpectations-postman_collection.json" download>postman collection</a> for reference.
+Please see [postman collection](./SpecmaticExpectations-postman_collection.json) for reference.
 
 Specmatic will verify these expectations against the OpenAPI Specifications and will only return a 2xx response if they are as per API Specifications. Specmatic returns 4xx response if the expectation json is not as per the OpenAPI Specifications.
 
@@ -1093,14 +1095,14 @@ If your tests are written in a JVM based language, you can start and stop the st
 
 Add `specmatic-core` jar dependency with scope set to test since this need not be shipped as part of your production deliverable.
 
-```
-<dependency>
+<CodeBlock language="xml">
+{`<dependency>
     <groupId>io.specmatic</groupId>
     <artifactId>specmatic-core</artifactId>
-    <version><!-- TODO: Liquid variable removed: {{ site.specmatic-core-version }} --></version>
+    <version>${VERSIONS['specmatic-core-version']}</version>
     <scope>test</scope>
-</dependency>
-```
+</dependency>`}
+</CodeBlock>
 
 Now you can import the utility to create the stub server. Below code snippets are in Kotlin. However, the overall concept is the same across all JVM languages such as Clojure, Scala or plain Java.
 
@@ -1237,9 +1239,9 @@ To clear the transient mock in the above example, you would call http://localhos
 
 Specmatic provides powerful matchers that offer dynamic, fine-grained control over how your stub server responds to incoming requests, enabling you to simulate complex and evolving scenarios.
 
-&#123;: .note&#125;
+:::note
 Requests are validated against the specification first, before any matchers in examples are evaluated.
-
+:::
 ### Matcher: `$neq`
 
 **Syntax:** `$neq(&lt;exact-value&gt;)`

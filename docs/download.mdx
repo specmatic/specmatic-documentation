@@ -6,12 +6,15 @@ sidebar_position: 2
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import CommercialDownload from '@site/src/components/CommercialDownload';
+import MavenCoordinates from '@site/src/components/MavenCoordinates';
+import { VERSIONS } from '@site/src/constants/versions';
 
 ## Specmatic Open Source
 
 ### Open Source CLI standalone executable
 
-Read the [CLI Quick Start (in 5 min)](/docs/getting-started/cli-quick-start) guide to learn more about using the standalone executable:
+Read the [CLI Quick Start (in 5 min)](/docs/Getting-started/cli-quick-start) guide to learn more about using the standalone executable:
 
 <Tabs groupId="install-specmatic">
   <TabItem value="docker" label="Docker">
@@ -33,8 +36,8 @@ docker run -it --rm specmatic/specmatic:VERSION --help
 
 You can download the standalone JAR from:
 
-- GitHub releases: `https://github.com/specmatic/specmatic/releases`
-- Maven Central: search for `io.specmatic:specmatic-executable-all`
+- [GitHub](https://github.com/specmatic/specmatic/releases/download/{VERSIONS["specmatic-core-version"]}/specmatic.jar)
+- [Maven Central](https://repo1.maven.org/maven2/io/specmatic/specmatic-executable-all/{VERSIONS["specmatic-core-version"]}/specmatic-executable-all-{VERSIONS["specmatic-core-version"]}.jar)
 
 To run the JAR:
 
@@ -109,101 +112,140 @@ pip install specmatic==VERSION
   </TabItem>
 </Tabs>
 
+---
+
 ## Specmatic Commercial Offerings
 
-> These tools are part of Specmatic’s commercial suite. Contact Specmatic or visit the product pages for licensing and exact version coordinates.
+:::info
+These tools are part of Specmatic's commercial suite. Contact Specmatic or visit the product pages for licensing details.
+:::
 
-### Specmatic OpenAPI
+### [Specmatic OpenAPI](https://specmatic.io/features/specmatic-openapi/)
 
-- Docker image: `specmatic/specmatic-openapi`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.openapi`  
-  - Artifact: `specmatic-openapi-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/openapi/specmatic-openapi-all`
+<CommercialDownload
+  imageName="specmatic/specmatic-openapi"
+  toolVersion={VERSIONS["specmatic-openapi-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/openapi/specmatic-openapi-all/${VERSIONS["specmatic-openapi-version"]}/specmatic-openapi-all-${VERSIONS["specmatic-openapi-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/openapi/specmatic-openapi-all/"
+  installScript="install-specmatic-openapi"
+/>
 
-### Specmatic Studio
+---
 
-- Product page: `https://specmatic.io/specmatic-studio/`
-- Docker image: `specmatic/specmatic-studio`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.studio`  
-  - Artifact: `specmatic-studio`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/studio/specmatic-studio`
+### [Specmatic Studio](https://specmatic.io/specmatic-studio/)
 
-### Specmatic Async
+<CommercialDownload
+  imageName="specmatic/specmatic-studio"
+  toolVersion={VERSIONS["specmatic-studio-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/studio/specmatic-studio/${VERSIONS["specmatic-studio-version"]}/specmatic-studio-${VERSIONS["specmatic-studio-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/studio/specmatic-studio/"
+  installScript="install-specmatic-studio"
+/>
 
-- Docker image: `specmatic/specmatic-async`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.async`  
-  - Artifact: `specmatic-async-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-async-all`
+---
 
-### Specmatic Kafka
+### [Specmatic Async](https://hub.docker.com/r/specmatic/specmatic-async)
 
-- Product page: `https://specmatic.io/features/kafka-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
-- Docker image: `specmatic/specmatic-kafka`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.async`  
-  - Artifact: `specmatic-kafka-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-kafka-all`
+<CommercialDownload
+  imageName="specmatic/specmatic-async"
+  toolVersion={VERSIONS["specmatic-async-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/async/specmatic-async-all/${VERSIONS["specmatic-async-version"]}/specmatic-async-all-${VERSIONS["specmatic-async-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-async-all"
+  installScript="install-specmatic-async"
+/>
 
-### Specmatic gRPC
+---
 
-- Product page: `https://specmatic.io/features/transform-your-grpc-proto-files-into-executable-contracts-in-seconds-with-specmatic/`
-- Docker image: `specmatic/specmatic-grpc`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.grpc`  
-  - Artifact: `specmatic-grpc-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/grpc/specmatic-grpc-all`
+### [Specmatic Kafka](https://specmatic.io/features/kafka-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/)
 
-### Specmatic GraphQL
+<CommercialDownload
+  imageName="specmatic/specmatic-kafka"
+  toolVersion={VERSIONS["specmatic-kafka-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/async/specmatic-kafka-all/${VERSIONS["specmatic-kafka-version"]}/specmatic-kafka-all-${VERSIONS["specmatic-kafka-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/async/specmatic-kafka-all"
+  installScript="install-specmatic-kafka"
+/>
 
-- Product page: `https://specmatic.io/features/transform-your-graphql-specs-into-executable-contracts-in-seconds-with-specmatic/`
-- Docker image: `specmatic/specmatic-graphql`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.graphql`  
-  - Artifact: `specmatic-graphql-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/graphql/specmatic-graphql-all`
+---
 
-### Specmatic Arazzo
+### [Specmatic gRPC](https://specmatic.io/features/transform-your-grpc-proto-files-into-executable-contracts-in-seconds-with-specmatic/)
 
-- Product page: `https://specmatic.io/features/author-test-arazzo-api-workflows-drag-drop-simplicity/`
-- Docker image: `specmatic/specmatic-arazzo`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.arazzo`  
-  - Artifact: `specmatic-arazzo-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/arazzo/specmatic-arazzo-all`
+<CommercialDownload
+  imageName="specmatic/specmatic-grpc"
+  toolVersion={VERSIONS["specmatic-grpc-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/grpc/specmatic-grpc-all/${VERSIONS["specmatic-grpc-version"]}/specmatic-grpc-all-${VERSIONS["specmatic-grpc-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/grpc/specmatic-grpc-all/"
+  installScript="install-specmatic-grpc"
+/>
 
-### Specmatic Redis
+---
 
-- Product page: `https://specmatic.io/features/api-resiliency-and-contract-testing-for-resp-redis/`
-- Docker image: `specmatic/specmatic-redis`
-- JAR coordinates (example):  
-  - Group: `io.specmatic.redis`  
-  - Artifact: `specmatic-redis-all`  
-  - Version: see `https://repo.specmatic.io/#releases/io/specmatic/redis/specmatic-redis-all`
+### [Specmatic GraphQL](https://specmatic.io/features/transform-your-graphql-specs-into-executable-contracts-in-seconds-with-specmatic/)
 
-### Specmatic JDBC
+<CommercialDownload
+  imageName="specmatic/specmatic-graphql"
+  toolVersion={VERSIONS["specmatic-graphql-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/graphql/specmatic-graphql-all/${VERSIONS["specmatic-graphql-version"]}/specmatic-graphql-all-${VERSIONS["specmatic-graphql-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/graphql/specmatic-graphql-all/"
+  installScript="install-specmatic-graphql"
+/>
 
-- Product page: `https://specmatic.io/features/jdbc-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
-- Maven coordinates (example):  
-  - Group: `io.specmatic.jdbc`  
-  - Artifact: `specmatic-jdbc`  
-  - Version: see Specmatic JDBC documentation or repository.
+---
 
-### Specmatic JMS
+### [Specmatic Arazzo](https://specmatic.io/features/author-test-arazzo-api-workflows-drag-drop-simplicity/)
 
-- Product page: `https://specmatic.io/features/jms-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
-- Maven coordinates (example):  
-  - Group: `io.specmatic.jms`  
-  - Artifact: `specmatic-jms`  
-  - Version: see Specmatic JMS documentation or repository.
+<CommercialDownload
+  imageName="specmatic/specmatic-arazzo"
+  toolVersion={VERSIONS["specmatic-arazzo-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/arazzo/specmatic-arazzo-all/${VERSIONS["specmatic-arazzo-version"]}/specmatic-arazzo-all-${VERSIONS["specmatic-arazzo-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/arazzo/specmatic-arazzo-all/"
+  installScript="install-specmatic-arazzo"
+/>
 
-### Specmatic Google Pub/Sub
+---
 
-- Product page: `https://specmatic.io/features/google-pubsub-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/`
-- Maven coordinates (example):  
-  - Group: `io.specmatic.googlepubsub`  
-  - Artifact: `specmatic-google-pubsub`  
-  - Version: see Specmatic Google Pub/Sub documentation or repository.
+### [Specmatic Redis](https://specmatic.io/features/api-resiliency-and-contract-testing-for-resp-redis/)
 
+<CommercialDownload
+  imageName="specmatic/specmatic-redis"
+  toolVersion={VERSIONS["specmatic-redis-version"]}
+  jarUrl={`https://repo.specmatic.io/releases/io/specmatic/redis/specmatic-redis-all/${VERSIONS["specmatic-redis-version"]}/specmatic-redis-all-${VERSIONS["specmatic-redis-version"]}.jar`}
+  repoUrl="https://repo.specmatic.io/#releases/io/specmatic/redis/specmatic-redis-all/"
+  installScript="install-specmatic-redis"
+/>
+
+---
+
+### [Specmatic JDBC](https://specmatic.io/features/jdbc-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/)
+
+Specmatic JDBC needs to be imported as a dependency in your project:
+
+<MavenCoordinates
+  groupId="io.specmatic.jdbc"
+  artifactId="specmatic-jdbc"
+  version={VERSIONS["specmatic-jdbc-version"]}
+/>
+
+---
+
+### [Specmatic JMS](https://specmatic.io/features/jms-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/)
+
+Specmatic JMS needs to be imported as a dependency in your project:
+
+<MavenCoordinates
+  groupId="io.specmatic.jms"
+  artifactId="specmatic-jms"
+  version={VERSIONS["specmatic-jms-version"]}
+/>
+
+---
+
+### [Specmatic Google Pub/Sub](https://specmatic.io/features/google-pubsub-contract-driven-development-leverage-asyncapi-specs-as-executable-contracts/)
+
+Specmatic Google Pub/Sub needs to be imported as a dependency in your project:
+
+<MavenCoordinates
+  groupId="io.specmatic.googlepubsub"
+  artifactId="specmatic-google-pubsub"
+  version={VERSIONS["specmatic-google-pubsub-version"]}
+/>

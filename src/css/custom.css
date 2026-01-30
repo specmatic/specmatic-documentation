@@ -4,7 +4,7 @@
  * work well for content-centric websites.
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 /* You can override the default Infima variables here. */
 :root {
@@ -32,13 +32,14 @@
   --ifm-color-primary-lighter: #7a3cad;
   --ifm-color-primary-lightest: #7a3cad;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-  font-family: "Rubik", sans-serif
-  ;
+  font-family: "Rubik", sans-serif;
 }
 
 ::selection {
-  background-color: #7a3cad; /* violet */
-  color: #ffffff;            /* white text */
+  background-color: #7a3cad;
+  /* violet */
+  color: #ffffff;
+  /* white text */
 }
 
 ::-moz-selection {
@@ -52,3 +53,6 @@
   color: #5b21b6;
 }
 
+.menu__list-item.hidden {
+  display: none;
+}

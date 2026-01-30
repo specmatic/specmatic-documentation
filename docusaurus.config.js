@@ -4,13 +4,13 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
+  title: 'Specmatic',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/specmatic-logo-round.svg',
 
@@ -96,7 +96,15 @@ const config = {
           },
         ],
       },
-      
+      algolia: {
+        appId: "YOUR_APP_ID",
+        apiKey: "YOUR_SEARCH_API_KEY",
+        indexName: "YOUR_INDEX_NAME",
+
+        // optional but recommended:
+        contextualSearch: true,
+      },
+
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
@@ -105,12 +113,20 @@ const config = {
 
   plugins: [
     [
-      require.resolve('@easyops-cn/docusaurus-search-local'),
+      "@docusaurus/plugin-client-redirects",
       {
-        hashed: true,
-        language: ['en'],
+        redirects: [
+          {
+            from: "/docs/references/configuration/hooks/hooks_to_modify_specs.mdx",
+            to: "/docs/Features/Hooks/hooks_to_modify_specs.mdx",
+          },
+          {
+            from: "/docs/references/configuration/hooks/Request_and_response_processing",
+            to: "/docs/Features/Hooks/Request_and_response_processing",
+          },
+        ],
       },
-    ],
+    ]
   ],
 };
 
