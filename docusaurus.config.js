@@ -22,7 +22,19 @@ const config = {
     mermaid: true,
   },
 
-  themes: ['@docusaurus/theme-mermaid'],
+  themes: [
+    "@docusaurus/theme-mermaid",
+  /** @type {any} */ ([
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: false,
+        language: ["en"],
+      },
+    ]),
+  ],
 
   // Set the production url of your site here
   url: 'https://your-docusaurus-site.example.com',
@@ -55,7 +67,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/specmatic/specmatic-documentation',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -96,15 +108,6 @@ const config = {
           },
         ],
       },
-      algolia: {
-        appId: "YOUR_APP_ID",
-        apiKey: "YOUR_SEARCH_API_KEY",
-        indexName: "YOUR_INDEX_NAME",
-
-        // optional but recommended:
-        contextualSearch: true,
-      },
-
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
@@ -112,21 +115,7 @@ const config = {
     }),
 
   plugins: [
-    [
-      "@docusaurus/plugin-client-redirects",
-      {
-        redirects: [
-          {
-            from: "/docs/references/configuration/hooks/hooks_to_modify_specs.mdx",
-            to: "/docs/Features/Hooks/hooks_to_modify_specs.mdx",
-          },
-          {
-            from: "/docs/references/configuration/hooks/Request_and_response_processing",
-            to: "/docs/Features/Hooks/Request_and_response_processing",
-          },
-        ],
-      },
-    ]
+
   ],
 };
 
