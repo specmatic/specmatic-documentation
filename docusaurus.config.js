@@ -254,14 +254,12 @@ const config = {
           },
           {
             from: [
-              '/contract_driven_development',
-              '/contract_driven_development.html',
               '/documentation/contract_driven_development',
               '/documentation/contract_driven_development.html',
               '/documentation/tutorials',
               '/documentation/tutorials.html'
             ],
-            to: '/contract_driven_development/contract_testing/'
+            to: '/contract_driven_development/'
           },
           {
             from: [
@@ -360,7 +358,7 @@ const config = {
               '/documentation/features',
               '/documentation/features.html'
             ],
-            to: '/features/authentication/'
+            to: '/features/'
           },
           {
             from: [
@@ -385,7 +383,7 @@ const config = {
               '/documentation/features/json_schema',
               '/documentation/features/json_schema.html'
             ],
-            to: '/features/json_schema/discriminator/'
+            to: '/features/json_schema/'
           },
           {
             from: [
@@ -399,9 +397,7 @@ const config = {
           {
             from: [
               '/documentation/getting_started/cli_quick_start',
-              '/documentation/getting_started/cli_quick_start.html',
-              '/getting_started',
-              '/getting_started.html'
+              '/documentation/getting_started/cli_quick_start.html'
             ],
             to: '/getting_started/cli-quick-start/'
           },
@@ -410,7 +406,7 @@ const config = {
               '/documentation/getting_started',
               '/documentation/getting_started.html'
             ],
-            to: '/getting_started/cli-quick-start/'
+            to: '/getting_started/'
           },
           {
             from: [
