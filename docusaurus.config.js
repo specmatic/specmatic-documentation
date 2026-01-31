@@ -631,6 +631,12 @@ const config = {
               '/documentation/wsdl.html'
             ],
             to: '/supported_protocols/soap/'
+          },
+          {
+            from: [
+                '/faqs.html'
+            ],
+            to: '/faqs'
           }
         ]
       }
