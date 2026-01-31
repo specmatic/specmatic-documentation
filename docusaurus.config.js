@@ -116,40 +116,46 @@ const config = {
     }),
 
   plugins: [
-    [
-      '@docusaurus/plugin-client-redirects',
-      {
-        redirects: [
-          {
-            from: [
-              '/backward_compatibility.html',
-              '/backward_compatibility',
-              '/documentation/backward_compatibility.html',
-              '/documentation/backward_compatibility',
-              '/documentation/tutorials/backward_compatibility.html',
-              '/documentation/tutorials/backward_compatibility'
-            ],
-            to: '/docs/contract_driven_development/backward_compatibility/'
-          },
-          {
-            from: [
-              '/documentation/stubbing-database.html',
-              '/documentation/stubbing_database.html',
-              '/documentation/supported_protocols/jdbc.html',
-            ],
-            to: '/docs/supported_protocols/jdbc/',
-          },
-          {
-            from: [
-              '/documentation/soap.html',
-              '/documentation/wsdl.html',
-              '/documentation/supported_protocols/soap.html',
-            ],
-            to: '/docs/supported_protocols/soap/',
-          }
-        ],
-      },
-    ],
+        [
+              '@docusaurus/plugin-client-redirects',
+              {
+                redirects: [
+                  {
+                    from: [
+                      '/backward_compatibility.html',
+                      '/backward_compatibility',
+                      '/documentation/backward_compatibility.html',
+                      '/documentation/backward_compatibility',
+                      '/documentation/tutorials/backward_compatibility.html',
+                      '/documentation/tutorials/backward_compatibility'
+                    ],
+                    to: '/docs/contract_driven_development/backward_compatibility/'
+                  },
+                  {
+                    from: [
+                      '/documentation/stubbing-database.html',
+                      '/documentation/stubbing_database.html',
+                      '/documentation/supported_protocols/jdbc.html',
+                      '/documentation/stubbing-database',
+                      '/documentation/stubbing_database',
+                      '/documentation/supported_protocols/jdbc',
+                    ],
+                    to: '/docs/supported_protocols/jdbc/'
+                  },
+                  {
+                    from: [
+                      '/documentation/soap.html',
+                      '/documentation/wsdl.html',
+                      '/documentation/supported_protocols/soap.html',
+                      '/documentation/soap',
+                      '/documentation/wsdl',
+                      '/documentation/supported_protocols/soap',
+                    ],
+                    to: '/docs/supported_protocols/soap/'
+                  }
+                ]
+              }
+        ]
   ],
 };
 
