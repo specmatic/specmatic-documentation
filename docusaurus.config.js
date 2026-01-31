@@ -182,8 +182,7 @@ const config = {
                       '/documentation/contract_driven_development',
                       '/documentation/contract_driven_development.html',
                       '/documentation/tutorials',
-                      '/documentation/tutorials.html',
-                      '/documentation/tutorials/'
+                      '/documentation/tutorials.html'
                     ],
                     to: '/docs/contract_driven_development/contract_testing/'
                   },
@@ -282,8 +281,7 @@ const config = {
                   {
                     from: [
                       '/documentation/features',
-                      '/documentation/features.html',
-                      '/documentation/features/'
+                      '/documentation/features.html'
                     ],
                     to: '/docs/features/authentication/'
                   },
@@ -308,8 +306,7 @@ const config = {
                   {
                     from: [
                       '/documentation/features/json_schema',
-                      '/documentation/features/json_schema.html',
-                      '/documentation/features/json_schema/'
+                      '/documentation/features/json_schema.html'
                     ],
                     to: '/docs/features/json_schema/discriminator/'
                   },
@@ -334,8 +331,7 @@ const config = {
                   {
                     from: [
                       '/documentation/getting_started',
-                      '/documentation/getting_started.html',
-                      '/documentation/getting_started/'
+                      '/documentation/getting_started.html'
                     ],
                     to: '/docs/getting_started/cli-quick-start/'
                   },
@@ -361,9 +357,7 @@ const config = {
                   },
                   {
                     from: [
-                      '/documentation',
-                      '/documentation.html',
-                      '/documentation/'
+                      '/documentation.html'
                     ],
                     to: '/docs/home/'
                   },
@@ -466,8 +460,7 @@ const config = {
                   {
                     from: [
                       '/documentation/supported_protocols/asyncapi',
-                      '/documentation/supported_protocols/asyncapi.html',
-                      '/documentation/supported_protocols/asyncapi/'
+                      '/documentation/supported_protocols/asyncapi.html'
                     ],
                     to: '/docs/supported_protocols/asyncapi/'
                   },
@@ -532,8 +525,7 @@ const config = {
                       '/documentation/language',
                       '/documentation/language.html',
                       '/documentation/supported_protocols',
-                      '/documentation/supported_protocols.html',
-                      '/documentation/supported_protocols/'
+                      '/documentation/supported_protocols.html'
                     ],
                     to: '/docs/supported_protocols/'
                   },
