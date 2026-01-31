@@ -9,7 +9,7 @@ import TabItem from '@theme/TabItem';
 
 # Continuous Integration
 
-Specmatic is a platform and programming language independent executable. We can run it in all CI environments through the [command line interface](../Getting-started/cli-quick-start.mdx#set-up).
+Specmatic is a platform and programming language independent executable. We can run it in all CI environments through the [command line interface](/docs/getting_started/cli-quick-start.mdx#set-up).
 
 ## Objective of this tutorial
 
@@ -42,11 +42,11 @@ We'll be working with two OpenAPI specifications:
 
 ### Setup overview
 
-A [central contract repository](../Contract-driven-development/central_contract_repository.mdx) is crucial for maintaining consistency across your API specifications and enabling effective contract testing.
+A [central contract repository](../contract_driven_development/central_contract_repository.mdx) is crucial for maintaining consistency across your API specifications and enabling effective contract testing.
 
 If you already have a central contract repository, you can use that instead and skip to the [next section](#ci-pipeline-setup).
 
-Else you can follow the [setup up instructions](../Contract-driven-development/central_contract_repository.mdx#setting-up-a-sample-central-contract-repository) to create one a sample central contact repo.
+Else you can follow the [setup up instructions](../contract_driven_development/central_contract_repository.mdx#setting-up-a-sample-central-contract-repository) to create one a sample central contact repo.
 
 ### CI Pipeline Setup
 
@@ -158,7 +158,7 @@ After successfully setting up your central contract repository and running the C
 Here are some sample pre-merge pipelines to disallow merges when specification changes have linter errors or backward breaking changes.
 
 - [GitHub Action](https://github.com/specmatic/specmatic-order-contracts/actions/workflows/central-contract-repo-report.yaml)
-- [GitLab CI](https://gitlab.com/znsio/contract-driven-development/central-contract-repository/-/pipelines)
+- [GitLab CI](https://gitlab.com/znsio/contract_driven_development/central-contract-repository/-/pipelines)
 
 ## Step 2: Setting up Client, Provider and Domain services
 
@@ -641,7 +641,7 @@ If you are interested to:
 - Identify dependencies between services
 - Monitor API coverage and stub usage of your services
 
-Please go through the detailed [Specmatic Insights guide](../Enterprise-onboarding/insights.mdx) to integrate Specmatic Insights in your CI/CD pipelines.
+Please go through the detailed [Specmatic Insights guide](/docs/enterprise_onboarding/insights.mdx) to integrate Specmatic Insights in your CI/CD pipelines.
 
 ## Cloning API specifications from authenticated Central Contract Repositories
 
@@ -761,8 +761,8 @@ contracts:
 
 ### Generic settings for any other CI setup
 
-* [Authentication In CI For HTTPS Git Source](../Contract-driven-development/contract_testing.mdx#authentication-in-ci-for-https-git-source)
-* [Authentication In CI For SSH Git Source](../Contract-driven-development/contract_testing.mdx#authentication-in-ci-for-ssh-git-source)
+* [Authentication In CI For HTTPS Git Source](../contract_driven_development/contract_testing.mdx#authentication-in-ci-for-https-git-source)
+* [Authentication In CI For SSH Git Source](../contract_driven_development/contract_testing.mdx#authentication-in-ci-for-ssh-git-source)
 
 ## Featured utilities
 

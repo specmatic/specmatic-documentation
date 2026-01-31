@@ -14,7 +14,7 @@ Contract Testing
 
 ### Overview
 
-As seen in "[getting started](../Getting-started/cli-quick-start#provider-side---contract-as-a-test)" Specmatic is able to leverage your API Specifications as "Contract Tests" to verify if your application is adhering the specification. This step is critical in making sure that your application / provider is honouring its side of the contract in the "Contract Driven Development" process. Similar to how consumers build against a smart mock that is based the same OpenAPI Specification.
+As seen in "[getting started](/docs/getting_started/cli-quick-start#provider-side---contract-as-a-test)" Specmatic is able to leverage your API Specifications as "Contract Tests" to verify if your application is adhering the specification. This step is critical in making sure that your application / provider is honouring its side of the contract in the "Contract Driven Development" process. Similar to how consumers build against a smart mock that is based the same OpenAPI Specification.
 
 ### Specmatic Contract Test - Command Line
 
@@ -189,7 +189,7 @@ Thus, the request and response examples named `FETCH_EMPLOYEE_SUCCESS` taken tog
 
 Note that the response example named `FETCH_EMPLOYEE_SUCCESS` is not compared with values returned by the application. This is what sets a Contract Test apart from an API Test. A Contract Test is concerned with checking the APIs signature, while API tests are concerned with checking the APIs logic.
 
-However, the response example named `FETCH_EMPLOYEE_SUCCESS` is verified and used in [service virtualization](./service_virtualization#inline-examples).
+However, the response example named `FETCH_EMPLOYEE_SUCCESS` is verified and used in [service virtualization](/docs/contract_driven_development/service_virtualization#inline-examples).
 
 ### Externalising examples / test cases
 
@@ -221,7 +221,7 @@ The test results will look as shown below. Specmatic has run one test per extern
 
 ```Tests run: 5, Successes: 5, Failures: 0, Errors: 0```
 
-The complete test data format can be referred to [here](../Features/external_example3#example-format).
+The complete test data format can be referred to [here](/docs/features/external_example3#example-format).
 
 ### Generating examples
 
@@ -235,7 +235,7 @@ In the above case, example JSON files will be written into the directory named `
 
 ### Strict Mode
 
-By default, Specmatic generates tests for an API when there are no examples. However, if you want to skip test generation from APIs for which there are no examples, you can enable strict mode using configuration as described [here](../references/configuration/stub-configuration#strict-mode), or using the `--strict` command-line parameter as shown below:
+By default, Specmatic generates tests for an API when there are no examples. However, if you want to skip test generation from APIs for which there are no examples, you can enable strict mode using configuration as described [here](/docs/references/configuration/stub-configuration#strict-mode), or using the `--strict` command-line parameter as shown below:
 
 ```bash
 specmatic test --testBaseURL https://my-json-server.typicode.com --strict employees.yaml
@@ -657,7 +657,7 @@ Since it is a JUnit5 test, you can run it in all the ways you are used to. If yo
 
 ### Handling Application authentication
 
-If the OpenAPI contract defines API authentication using security schemas, these information will be used by Specmatic when running contract tests. Read more about it on the page on [authentication](../Features/authentication).
+If the OpenAPI contract defines API authentication using security schemas, these information will be used by Specmatic when running contract tests. Read more about it on the page on [authentication](/docs/features/authentication).
 
 ### Authentication In CI For HTTPS Git Source
 
@@ -962,7 +962,7 @@ Note the quotes around the name, which are necessary because of the space requir
 
 When the test for this example runs, it will log the run details and failures without breaking the build. In the test report, it shows up as `WIP`. However, the use of `WIP` does not bypass the contract validation, the contract itself should be in valid state.
 
-Also, please note that this use of `[WIP]` differs from the WIP tags given [here](./backward_compatibility#handling-changes-in-progress). WIP tags can be applied to the path/endpoint, while this works only on example names.
+Also, please note that this use of `[WIP]` differs from the WIP tags given [here](/docs/contract_driven_development/backward_compatibility#handling-changes-in-progress). WIP tags can be applied to the path/endpoint, while this works only on example names.
 
 ### Examples that trigger 400 responses
 
@@ -1196,7 +1196,7 @@ The data from the coverage report is saved to a file located at `build/reports/s
 ## Overlays
 Specmatic supports overlays to modify API specifications at runtime without changing the original specification files. Overlays are useful when you want to add or modify certain aspects of the API specification for specific testing scenarios.
 
-More details on overlays can be found in the [Overlays Documentation](../Features/overlays).
+More details on overlays can be found in the [Overlays Documentation](/docs/features/overlays).
 
 ## Hooks
 
@@ -1435,7 +1435,7 @@ This approach:
 - Accurately tests backend service requirements
 - Simulates API Gateway behavior in your test environment
 
-> **Note:** If you're looking to modify headers during service virtualization using Specmatic's `stub` command, then please refer to stub-specific header modifications documentation : [Using Hooks during Stub Creation](./service_virtualization#hooks)
+> **Note:** If you're looking to modify headers during service virtualization using Specmatic's `stub` command, then please refer to stub-specific header modifications documentation : [Using Hooks during Stub Creation](/docs/contract_driven_development/service_virtualization#hooks)
 
 ### Conclusion
 
@@ -1889,7 +1889,7 @@ System.setProperty("MAX_TEST_REQUEST_COMBINATIONS", "2");
 
 Specmatic can be configured to use a branch of the central repo with the same name as the branch that is locally checked out.
 
-More details [here](./service_virtualization#using-matching-branches-in-the-central-contract-repo).
+More details [here](/docs/contract_driven_development/service_virtualization#using-matching-branches-in-the-central-contract-repo).
 
 ### Sample Project
 

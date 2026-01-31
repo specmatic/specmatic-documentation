@@ -1,0 +1,22 @@
+
+> my-docs@0.0.0 build
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[90m[[90mwebpackbar[90m][39m [36m???[39m Compiling Client
+[90m[[90mwebpackbar[90m][39m [36m???[39m Compiling Server
+[90m[[90mwebpackbar[90m][39m [32m???[39m Server: Compiled successfully in 10.39s
+[90m[[90mwebpackbar[90m][39m [32m???[39m Client: Compiled successfully in 15.99s
+[WARNING] Docusaurus found broken anchors!
+System.Management.Automation.RemoteException
+Please check the pages of your site in the list below, and make sure you don't reference any anchor that does not exist.
+Note: it's possible to ignore broken anchors with the 'onBrokenAnchors' Docusaurus configuration, and let the build pass.
+System.Management.Automation.RemoteException
+Exhaustive list of all broken anchors found:
+- Broken anchor on source page path = /docs/references/continuous_integration/:
+   -> linking to /docs/contract_driven_development/central_contract_repository/#setting-up-a-sample-central-contract-repository
+- Broken anchor on source page path = /docs/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/:
+   -> linking to ./#configuration-reference (resolved as: /docs/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/#configuration-reference)
+System.Management.Automation.RemoteException
+[SUCCESS] Generated static files in "build".
+[INFO] Use `npm run serve` command to test your build locally.

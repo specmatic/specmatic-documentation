@@ -116,7 +116,32 @@ const config = {
     }),
 
   plugins: [
-
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        redirects: [
+          {
+            from: [
+              '/backward_compatibility.html',
+              '/backward_compatibility',
+              '/documentation/backward_compatibility.html',
+              '/documentation/backward_compatibility',
+              '/documentation/tutorials/backward_compatibility.html',
+              '/documentation/tutorials/backward_compatibility'
+            ],
+            to: '/docs/contract_driven_development/backward_compatibility/'
+          },
+          {
+            from: [
+              '/documentation/stubbing-database.html',
+              '/documentation/stubbing_database.html',
+              '/documentation/supported_protocols/jdbc.html',
+            ],
+            to: '/docs/supported_protocols/jdbc/',
+          },
+        ],
+      },
+    ],
   ],
 };
 

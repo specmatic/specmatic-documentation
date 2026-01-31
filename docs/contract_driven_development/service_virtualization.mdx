@@ -16,7 +16,7 @@ Service Virtualization
 ## Pre-requisites
 
 - Create a directory named `specmatic` in your home directory.
-- Make sure you have installed Specmatic from [Download page](../download).
+- Make sure you have installed Specmatic from [Download page](/docs/download).
 
 ## Inline Examples
 
@@ -436,7 +436,7 @@ docker run -p 9000:9000 -v "${PWD}/employees.yaml:/usr/src/app/employees.yaml" -
 
 To recap, in `strict` mode, Specmatic will only respond to requests that have matching examples, inline or external.
 
-You can enable strict mode using configuration as described [here](../references/configuration/stub-configuration#strict-mode).
+You can enable strict mode using configuration as described [here](/docs/references/configuration/stub-configuration#strict-mode).
 
 ## Data Type-Based Examples
 
@@ -915,7 +915,7 @@ The same idea extends to the response.
 
 When Specmatic's stub receives a request and finds no matching examples for it, Specmatic returns a response generated from the response schema in the API specification. While the generated response is schema-valid, it will not have meaningful values drawn from the context of your business domain. So in order to get domain-relevant responses when there examples, you can provide a dictionary of sample values to Specmatic. Specmatic will look up this dictionary when it needs to generate domain-relevant examples.
 
-Refer to [Dictionary with service virtualization](../Features/dictionary#dictionary-with-service-virtualization) for more details.
+Refer to [Dictionary with service virtualization](/docs/features/dictionary#dictionary-with-service-virtualization) for more details.
 
 ## Delay Simulation
 
@@ -1110,7 +1110,7 @@ Now you can import the utility to create the stub server. Below code snippets ar
 import io.specmatic.stub.createStub
 ```
 
-This utility can now be used in your test ```setup``` / ```beforeAll``` method to start the stub server. Specmatic automatically looks for your [Specmatic configuration](../references/configuration) file in project root directory / classpath to locate your API Specification files that need to run as part of the stub server.
+This utility can now be used in your test ```setup``` / ```beforeAll``` method to start the stub server. Specmatic automatically looks for your [Specmatic configuration](/docs/references/configuration) file in project root directory / classpath to locate your API Specification files that need to run as part of the stub server.
 
 ```kotlin
 @BeforeAll
@@ -1587,7 +1587,7 @@ We'd also have an example available that simulates the downstream service recove
 3. **Resource Management**: Instead of holding the connection open, your API catches the timeout, aborts the downstream call, and returns HTTP 429 to the client
 4. **Requests 3+**: The first matcher is exhausted. So when the consumer retries, the second example responds immediately with a 200 OK, thus showing how the system returns to a healthy state once the downstream service recovers
 
-Specmatic can assist you in testing this scenario during contract testing. In the case of a `429 (Too Many Requests)` response, Specmatic will retry the request, adhering to the delay specified in the `Retry-After` header. For additional details, please refer to the [Smart Resiliency Orchestration](./contract_testing#smart-resiliency-orchestration) section.
+Specmatic can assist you in testing this scenario during contract testing. In the case of a `429 (Too Many Requests)` response, Specmatic will retry the request, adhering to the delay specified in the `Retry-After` header. For additional details, please refer to the [Smart Resiliency Orchestration](/docs/contract_driven_development/contract_testing#smart-resiliency-orchestration) section.
 
 ## Externalised Response Generation
 
@@ -1812,7 +1812,7 @@ The hook script in this example performs a simple transformation:
 
 This allows the stub to accept requests with the `X-auth-token` header that the frontend uses, while maintaining the original specification for the backend API.
 
-> **Note:** If you're looking to modify headers during test using Specmatic's `test` command, then please refer to test-specific header modifications documentation : [Using Hooks during Tests](./contract_testing#hooks)
+> **Note:** If you're looking to modify headers during test using Specmatic's `test` command, then please refer to test-specific header modifications documentation : [Using Hooks during Tests](/docs/contract_driven_development/contract_testing#hooks)
 
 ---
 

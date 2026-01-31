@@ -1,0 +1,88 @@
+
+> my-docs@0.0.0 build
+> docusaurus build
+
+[INFO] [en] Creating an optimized production build...
+[90m[[90mwebpackbar[90m][39m [36m???[39m Compiling Client
+[90m[[90mwebpackbar[90m][39m [36m???[39m Compiling Server
+[90m[[90mwebpackbar[90m][39m [32m???[39m Server: Compiled successfully in 6.72s
+[90m[[90mwebpackbar[90m][39m [32m???[39m Client: Compiled successfully in 10.50s
+
+[ERROR] Error: Unable to build website for locale en.
+    at tryToBuildLocale (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:83:15)
+    at async C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:35:9
+    at async mapAsyncSequential (C:\Users\vedan\my-docs\node_modules\@docusaurus\utils\lib\jsUtils.js:21:24)
+    at async Command.build (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:34:5)
+    at async Promise.all (index 0)
+    at async runCLI (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\cli.js:56:5)
+    at async file:///C:/Users/vedan/my-docs/node_modules/@docusaurus/core/bin/docusaurus.mjs:44:3 {
+  [cause]: Error: Docusaurus found broken links!
+  
+  Please check the pages of your site in the list below, and make sure you don't reference any path that does not exist.
+  Note: it's possible to ignore broken links with the 'onBrokenLinks' Docusaurus configuration, and let the build pass.
+  
+  Exhaustive list of all broken links found:
+  - Broken link on source page path = /docs/contract_driven_development/backward_compatibility/:
+     -> linking to ./backward_compatibility_rules/ (resolved as: /docs/contract_driven_development/backward_compatibility/backward_compatibility_rules/)
+  - Broken link on source page path = /docs/contract_driven_development/central_contract_repository/:
+     -> linking to ../references/configuration/ (resolved as: /docs/contract_driven_development/references/configuration/)
+  - Broken link on source page path = /docs/contract_driven_development/contract_testing/:
+     -> linking to ./service_virtualization/#inline-examples (resolved as: /docs/contract_driven_development/contract_testing/service_virtualization/#inline-examples)
+     -> linking to ../references/configuration/stub-configuration/#strict-mode (resolved as: /docs/contract_driven_development/references/configuration/stub-configuration/#strict-mode)
+     -> linking to ./backward_compatibility/#handling-changes-in-progress (resolved as: /docs/contract_driven_development/contract_testing/backward_compatibility/#handling-changes-in-progress)
+     -> linking to ./service_virtualization/#hooks (resolved as: /docs/contract_driven_development/contract_testing/service_virtualization/#hooks)
+     -> linking to ./service_virtualization/#using-matching-branches-in-the-central-contract-repo (resolved as: /docs/contract_driven_development/contract_testing/service_virtualization/#using-matching-branches-in-the-central-contract-repo)
+  - Broken link on source page path = /docs/contract_driven_development/service_virtualization/:
+     -> linking to ../download/ (resolved as: /docs/contract_driven_development/download/)
+     -> linking to ../references/configuration/stub-configuration/#strict-mode (resolved as: /docs/contract_driven_development/references/configuration/stub-configuration/#strict-mode)
+     -> linking to ../references/configuration/ (resolved as: /docs/contract_driven_development/references/configuration/)
+     -> linking to ./contract_testing/#smart-resiliency-orchestration (resolved as: /docs/contract_driven_development/service_virtualization/contract_testing/#smart-resiliency-orchestration)
+     -> linking to ./contract_testing/#hooks (resolved as: /docs/contract_driven_development/service_virtualization/contract_testing/#hooks)
+  - Broken link on source page path = /docs/enterprise_onboarding/insights/:
+     -> linking to ./license_key/ (resolved as: /docs/enterprise_onboarding/insights/license_key/)
+     -> linking to ../references/continuous_integration/ (resolved as: /docs/enterprise_onboarding/references/continuous_integration/)
+  - Broken link on source page path = /docs/enterprise_onboarding/license_key/:
+     -> linking to ../download/#specmatic-open-source (resolved as: /docs/enterprise_onboarding/download/#specmatic-open-source)
+     -> linking to ../references/using_docker_image/ (resolved as: /docs/enterprise_onboarding/references/using_docker_image/)
+     -> linking to ./insights/#step-2-configuring-specmatic-insights (resolved as: /docs/enterprise_onboarding/license_key/insights/#step-2-configuring-specmatic-insights)
+  - Broken link on source page path = /docs/features/dictionary/:
+     -> linking to ../contract_driven_developement/service_virtualization/ (resolved as: /docs/features/contract_driven_developement/service_virtualization/)
+     -> linking to ./external_example3/ (resolved as: /docs/features/dictionary/external_example3/)
+  - Broken link on source page path = /docs/features/event_flow_and_behaviour/:
+     -> linking to ./overlays/ (resolved as: /docs/features/event_flow_and_behaviour/overlays/)
+  - Broken link on source page path = /docs/features/external_example3/:
+     -> linking to ../contract_driven_development/service_virtualization/#data-type-based-examples (resolved as: /docs/features/contract_driven_development/service_virtualization/#data-type-based-examples)
+  - Broken link on source page path = /docs/features/hooks/hooks_to_modify_specs/:
+     -> linking to ../../references/configuration/hooks/ (resolved as: /docs/features/references/configuration/hooks/)
+  - Broken link on source page path = /docs/features/json_schema/discriminator/:
+     -> linking to ../../contract_driven_developement/backward_compatibility/ (resolved as: /docs/features/contract_driven_developement/backward_compatibility/)
+  - Broken link on source page path = /docs/getting_started/cli-quick-start/:
+     -> linking to ../contract_driven_developement/contract_testing/ (resolved as: /docs/getting_started/contract_driven_developement/contract_testing/)
+  - Broken link on source page path = /docs/getting_started/studio-quick-start/:
+     -> linking to ../contract_driven_developement/contract_testing/ (resolved as: /docs/getting_started/contract_driven_developement/contract_testing/)
+     -> linking to ../contract_driven_developement/service_virtualization/ (resolved as: /docs/getting_started/contract_driven_developement/service_virtualization/)
+  - Broken link on source page path = /docs/security_disclosure_procss/:
+     -> linking to ./vulnerability-remeddiation-sla/ (resolved as: /docs/security_disclosure_procss/vulnerability-remeddiation-sla/)
+  - Broken link on source page path = /docs/supported_protocols/asyncapi/kafka/:
+     -> linking to ../../references/configuration/ (resolved as: /docs/supported_protocols/references/configuration/)
+     -> linking to ../../sample_projects/ (resolved as: /docs/supported_protocols/sample_projects/)
+  - Broken link on source page path = /docs/supported_protocols/graphql/:
+     -> linking to ../sample_projects/ (resolved as: /docs/supported_protocols/sample_projects/)
+  - Broken link on source page path = /docs/supported_protocols/grpc/:
+     -> linking to ../sample_projects/ (resolved as: /docs/supported_protocols/sample_projects/)
+  - Broken link on source page path = /docs/vulnerability-remeddiation-sla/:
+     -> linking to ./security_disclosure_procss/ (resolved as: /docs/vulnerability-remeddiation-sla/security_disclosure_procss/)
+  
+      at throwError (C:\Users\vedan\my-docs\node_modules\@docusaurus\logger\lib\logger.js:80:11)
+      at reportBrokenLinks (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\server\brokenLinks.js:250:47)
+      at handleBrokenLinks (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\server\brokenLinks.js:282:5)
+      at executeBrokenLinksCheck (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\buildLocale.js:119:47)
+      at C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\buildLocale.js:94:67
+      at Object.async (C:\Users\vedan\my-docs\node_modules\@docusaurus\logger\lib\perfLogger.js:42:47)
+      at buildLocale (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\buildLocale.js:94:31)
+      at async runBuildLocaleTask (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:98:5)
+      at async C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:79:13
+      at async tryToBuildLocale (C:\Users\vedan\my-docs\node_modules\@docusaurus\core\lib\commands\build\build.js:75:9)
+}
+[INFO] Docusaurus version: 3.9.2
+Node version: v24.11.1
