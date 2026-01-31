@@ -139,6 +139,14 @@ const config = {
             ],
             to: '/docs/supported_protocols/jdbc/',
           },
+          {
+            from: [
+              '/documentation/soap.html',
+              '/documentation/wsdl.html',
+              '/documentation/supported_protocols/soap.html',
+            ],
+            to: '/docs/supported_protocols/soap/',
+          }
         ],
       },
     ],
