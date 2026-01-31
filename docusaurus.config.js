@@ -64,6 +64,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/', // Serve docs at root instead of /docs
           sidebarPath: './sidebars.js',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
@@ -120,6 +121,81 @@ const config = {
       '@docusaurus/plugin-client-redirects',
       {
         redirects: [
+          // === Redirects from /docs/* to /* (docs prefix redirects) ===
+          // contract_driven_development
+          { from: '/docs/contract_driven_development/backward_compatibility/', to: '/contract_driven_development/backward_compatibility/' },
+          { from: '/docs/contract_driven_development/backward_compatibility_rules/', to: '/contract_driven_development/backward_compatibility_rules/' },
+          { from: '/docs/contract_driven_development/central_contract_repository/', to: '/contract_driven_development/central_contract_repository/' },
+          { from: '/docs/contract_driven_development/contract_testing/', to: '/contract_driven_development/contract_testing/' },
+          { from: '/docs/contract_driven_development/generating_api_specifications/', to: '/contract_driven_development/generating_api_specifications/' },
+          { from: '/docs/contract_driven_development/service_virtualization/', to: '/contract_driven_development/service_virtualization/' },
+          // enterprise_onboarding
+          { from: '/docs/enterprise_onboarding/insights/', to: '/enterprise_onboarding/insights/' },
+          { from: '/docs/enterprise_onboarding/license_key/', to: '/enterprise_onboarding/license_key/' },
+          { from: '/docs/enterprise_onboarding/offline_license_set_up/', to: '/enterprise_onboarding/offline_license_set_up/' },
+          { from: '/docs/enterprise_onboarding/SSO/entra-integration/', to: '/enterprise_onboarding/SSO/entra-integration/' },
+          { from: '/docs/enterprise_onboarding/SSO/okta-integration/', to: '/enterprise_onboarding/SSO/okta-integration/' },
+          // features
+          { from: '/docs/features/authentication/', to: '/features/authentication/' },
+          { from: '/docs/features/dictionary/', to: '/features/dictionary/' },
+          { from: '/docs/features/event_flow_and_behaviour/', to: '/features/event_flow_and_behaviour/' },
+          { from: '/docs/features/external_examples/', to: '/features/external_examples/' },
+          { from: '/docs/features/feature-hub-stubbing/', to: '/features/feature-hub-stubbing/' },
+          { from: '/docs/features/overlays/', to: '/features/overlays/' },
+          { from: '/docs/features/hooks/hooks_to_modify_specs/', to: '/features/hooks/hooks_to_modify_specs/' },
+          { from: '/docs/features/hooks/processor_hooks/', to: '/features/hooks/processor_hooks/' },
+          { from: '/docs/features/json_schema/anyOf_support/', to: '/features/json_schema/anyOf_support/' },
+          { from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/' },
+          // getting_started
+          { from: '/docs/getting_started/cli-quick-start/', to: '/getting_started/cli-quick-start/' },
+          { from: '/docs/getting_started/mcp-auto-test/', to: '/getting_started/mcp-auto-test/' },
+          { from: '/docs/getting_started/studio-quick-start/', to: '/getting_started/studio-quick-start/' },
+          // references
+          { from: '/docs/references/configuration/', to: '/references/configuration/' },
+          { from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/' },
+          { from: '/docs/references/configuration/complete-examples/', to: '/references/configuration/complete-examples/' },
+          { from: '/docs/references/configuration/contract-management/', to: '/references/configuration/contract-management/' },
+          { from: '/docs/references/configuration/environments/', to: '/references/configuration/environments/' },
+          { from: '/docs/references/configuration/getting-started/', to: '/references/configuration/getting-started/' },
+          { from: '/docs/references/configuration/hooks/', to: '/references/configuration/hooks/' },
+          { from: '/docs/references/configuration/reports/', to: '/references/configuration/reports/' },
+          { from: '/docs/references/configuration/stub-configuration/', to: '/references/configuration/stub-configuration/' },
+          { from: '/docs/references/configuration/telemetry/', to: '/references/configuration/telemetry/' },
+          { from: '/docs/references/configuration/template-values/', to: '/references/configuration/template-values/' },
+          { from: '/docs/references/configuration/test-configuration/', to: '/references/configuration/test-configuration/' },
+          { from: '/docs/references/configuration/upgrade-specmatic-config/', to: '/references/configuration/upgrade-specmatic-config/' },
+          { from: '/docs/references/continuous_integration/', to: '/references/continuous_integration/' },
+          { from: '/docs/references/troubleshooting/', to: '/references/troubleshooting/' },
+          { from: '/docs/references/understanding_errors/', to: '/references/understanding_errors/' },
+          { from: '/docs/references/using_docker_image/', to: '/references/using_docker_image/' },
+          // supported_protocols
+          { from: '/docs/supported_protocols/', to: '/supported_protocols/' },
+          { from: '/docs/supported_protocols/arazzo/', to: '/supported_protocols/arazzo/' },
+          { from: '/docs/supported_protocols/graphql/', to: '/supported_protocols/graphql/' },
+          { from: '/docs/supported_protocols/grpc/', to: '/supported_protocols/grpc/' },
+          { from: '/docs/supported_protocols/jdbc/', to: '/supported_protocols/jdbc/' },
+          { from: '/docs/supported_protocols/redis/', to: '/supported_protocols/redis/' },
+          { from: '/docs/supported_protocols/soap/', to: '/supported_protocols/soap/' },
+          { from: '/docs/supported_protocols/asyncapi/', to: '/supported_protocols/asyncapi/' },
+          { from: '/docs/supported_protocols/asyncapi/active-mq/', to: '/supported_protocols/asyncapi/active-mq/' },
+          { from: '/docs/supported_protocols/asyncapi/aws-event-bridge/', to: '/supported_protocols/asyncapi/aws-event-bridge/' },
+          { from: '/docs/supported_protocols/asyncapi/aws-sns/', to: '/supported_protocols/asyncapi/aws-sns/' },
+          { from: '/docs/supported_protocols/asyncapi/aws-sqs/', to: '/supported_protocols/asyncapi/aws-sqs/' },
+          { from: '/docs/supported_protocols/asyncapi/google-pub-sub/', to: '/supported_protocols/asyncapi/google-pub-sub/' },
+          { from: '/docs/supported_protocols/asyncapi/jms/', to: '/supported_protocols/asyncapi/jms/' },
+          { from: '/docs/supported_protocols/asyncapi/kafka/', to: '/supported_protocols/asyncapi/kafka/' },
+          { from: '/docs/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/', to: '/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/' },
+          { from: '/docs/supported_protocols/asyncapi/mqtt/', to: '/supported_protocols/asyncapi/mqtt/' },
+          { from: '/docs/supported_protocols/asyncapi/rabbit-mq/', to: '/supported_protocols/asyncapi/rabbit-mq/' },
+          { from: '/docs/supported_protocols/asyncapi/web-sockets/', to: '/supported_protocols/asyncapi/web-sockets/' },
+          // top-level pages
+          { from: '/docs/home/', to: '/home/' },
+          { from: '/docs/download/', to: '/download/' },
+          { from: '/docs/sample_projects/', to: '/sample_projects/' },
+          { from: '/docs/security-disclosure/', to: '/security-disclosure/' },
+          { from: '/docs/vulnerability-remediation-sla/', to: '/vulnerability-remediation-sla/' },
+
+          // === Legacy redirects (from old documentation paths) ===
           {
             from: [
               '/backward_compatibility',
@@ -129,7 +205,7 @@ const config = {
               '/documentation/tutorials/backward_compatibility',
               '/documentation/tutorials/backward_compatibility.html'
             ],
-            to: '/docs/contract_driven_development/backward_compatibility/'
+            to: '/contract_driven_development/backward_compatibility/'
           },
           {
             from: [
@@ -140,7 +216,7 @@ const config = {
               '/documentation/tutorials/backward_compatibility_rules',
               '/documentation/tutorials/backward_compatibility_rules.html'
             ],
-            to: '/docs/contract_driven_development/backward_compatibility_rules/'
+            to: '/contract_driven_development/backward_compatibility_rules/'
           },
           {
             from: [
@@ -149,7 +225,7 @@ const config = {
               '/documentation/tutorials/central_contract_repository',
               '/documentation/tutorials/central_contract_repository.html'
             ],
-            to: '/docs/contract_driven_development/central_contract_repository/'
+            to: '/contract_driven_development/central_contract_repository/'
           },
           {
             from: [
@@ -164,7 +240,7 @@ const config = {
               '/documentation/tutorials/contract_testing',
               '/documentation/tutorials/contract_testing.html'
             ],
-            to: '/docs/contract_driven_development/contract_testing/'
+            to: '/contract_driven_development/contract_testing/'
           },
           {
             from: [
@@ -173,7 +249,7 @@ const config = {
               '/documentation/tutorials/generating_api_specifications',
               '/documentation/tutorials/generating_api_specifications.html'
             ],
-            to: '/docs/contract_driven_development/generating_api_specifications/'
+            to: '/contract_driven_development/generating_api_specifications/'
           },
           {
             from: [
@@ -184,7 +260,7 @@ const config = {
               '/documentation/tutorials',
               '/documentation/tutorials.html'
             ],
-            to: '/docs/contract_driven_development/contract_testing/'
+            to: '/contract_driven_development/contract_testing/'
           },
           {
             from: [
@@ -197,7 +273,7 @@ const config = {
               '/service_virtualization_tutorial',
               '/service_virtualization_tutorial.html'
             ],
-            to: '/docs/contract_driven_development/service_virtualization/'
+            to: '/contract_driven_development/service_virtualization/'
           },
           {
             from: [
@@ -206,14 +282,14 @@ const config = {
               '/documentation/references/insights',
               '/documentation/references/insights.html'
             ],
-            to: '/docs/enterprise_onboarding/insights/'
+            to: '/enterprise_onboarding/insights/'
           },
           {
             from: [
               '/documentation/license_key',
               '/documentation/license_key.html'
             ],
-            to: '/docs/enterprise_onboarding/license_key/'
+            to: '/enterprise_onboarding/license_key/'
           },
           {
             from: [
@@ -224,7 +300,7 @@ const config = {
               '/documentation/features/authentication',
               '/documentation/features/authentication.html'
             ],
-            to: '/docs/features/authentication/'
+            to: '/features/authentication/'
           },
           {
             from: [
@@ -233,14 +309,14 @@ const config = {
               '/documentation/features/authentication-by-reaching-another-service',
               '/documentation/features/authentication-by-reaching-another-service.html'
             ],
-            to: '/docs/references/configuration/authentication/'
+            to: '/references/configuration/authentication/'
           },
           {
             from: [
               '/documentation/convert_gherkin_to_openapi',
               '/documentation/convert_gherkin_to_openapi.html'
             ],
-            to: '/docs/features/overlays/'
+            to: '/features/overlays/'
           },
           {
             from: [
@@ -249,7 +325,7 @@ const config = {
               '/documentation/features/dictionary',
               '/documentation/features/dictionary.html'
             ],
-            to: '/docs/features/dictionary/'
+            to: '/features/dictionary/'
           },
           {
             from: [
@@ -258,7 +334,7 @@ const config = {
               '/documentation/features/external_examples',
               '/documentation/features/external_examples.html'
             ],
-            to: '/docs/features/external_examples/'
+            to: '/features/external_examples/'
           },
           {
             from: [
@@ -269,21 +345,21 @@ const config = {
               '/features/hooks_to_modify_specs',
               '/features/hooks_to_modify_specs.html'
             ],
-            to: '/docs/features/hooks/hooks_to_modify_specs/'
+            to: '/features/hooks/hooks_to_modify_specs/'
           },
           {
             from: [
               '/features/processor_hooks',
               '/features/processor_hooks.html'
             ],
-            to: '/docs/features/hooks/processor_hooks/'
+            to: '/features/hooks/processor_hooks/'
           },
           {
             from: [
               '/documentation/features',
               '/documentation/features.html'
             ],
-            to: '/docs/features/authentication/'
+            to: '/features/authentication/'
           },
           {
             from: [
@@ -292,7 +368,7 @@ const config = {
               '/documentation/features/json_schema/anyOf-support',
               '/documentation/features/json_schema/anyOf-support.html'
             ],
-            to: '/docs/features/json_schema/anyOf_support/'
+            to: '/features/json_schema/anyOf_support/'
           },
           {
             from: [
@@ -301,14 +377,14 @@ const config = {
               '/documentation/features/json_schema/discriminator',
               '/documentation/features/json_schema/discriminator.html'
             ],
-            to: '/docs/features/json_schema/discriminator/'
+            to: '/features/json_schema/discriminator/'
           },
           {
             from: [
               '/documentation/features/json_schema',
               '/documentation/features/json_schema.html'
             ],
-            to: '/docs/features/json_schema/discriminator/'
+            to: '/features/json_schema/discriminator/'
           },
           {
             from: [
@@ -317,7 +393,7 @@ const config = {
               '/documentation/stubbing_featurehub',
               '/documentation/stubbing_featurehub.html'
             ],
-            to: '/docs/features/feature-hub-stubbing/'
+            to: '/features/feature-hub-stubbing/'
           },
           {
             from: [
@@ -326,14 +402,14 @@ const config = {
               '/getting_started',
               '/getting_started.html'
             ],
-            to: '/docs/getting_started/cli-quick-start/'
+            to: '/getting_started/cli-quick-start/'
           },
           {
             from: [
               '/documentation/getting_started',
               '/documentation/getting_started.html'
             ],
-            to: '/docs/getting_started/cli-quick-start/'
+            to: '/getting_started/cli-quick-start/'
           },
           {
             from: [
@@ -342,7 +418,7 @@ const config = {
               '/documentation/mcp_auto_test',
               '/documentation/mcp_auto_test.html'
             ],
-            to: '/docs/getting_started/mcp-auto-test/'
+            to: '/getting_started/mcp-auto-test/'
           },
           {
             from: [
@@ -353,13 +429,13 @@ const config = {
               '/studio_quick_start',
               '/studio_quick_start.html'
             ],
-            to: '/docs/getting_started/studio-quick-start/'
+            to: '/getting_started/studio-quick-start/'
           },
           {
             from: [
               '/documentation.html'
             ],
-            to: '/docs/home/'
+            to: '/home/'
           },
           {
             from: [
@@ -371,14 +447,12 @@ const config = {
               '/documentation/references/configuration.html',
               '/documentation/specmatic_json',
               '/documentation/specmatic_json.html',
-              '/references/configuration',
-              '/references/configuration.html',
               '/specmatic_json',
               '/specmatic_json.html',
               '/supported_protocols/asyncapi/references/configuration',
               '/supported_protocols/asyncapi/references/configuration.html'
             ],
-            to: '/docs/references/configuration/'
+            to: '/references/configuration/'
           },
           {
             from: [
@@ -387,7 +461,7 @@ const config = {
               '/documentation/references/configuration_v1',
               '/documentation/references/configuration_v1.html'
             ],
-            to: '/docs/references/configuration/'
+            to: '/references/configuration/'
           },
           {
             from: [
@@ -396,7 +470,7 @@ const config = {
               '/documentation/references/continuous_integration',
               '/documentation/references/continuous_integration.html'
             ],
-            to: '/docs/references/continuous_integration/'
+            to: '/references/continuous_integration/'
           },
           {
             from: [
@@ -405,7 +479,7 @@ const config = {
               '/documentation/references/docker_images',
               '/documentation/references/docker_images.html'
             ],
-            to: '/docs/references/using_docker_image/'
+            to: '/references/using_docker_image/'
           },
           {
             from: [
@@ -414,7 +488,7 @@ const config = {
               '/documentation/references/older_configuration_versions',
               '/documentation/references/older_configuration_versions.html'
             ],
-            to: '/docs/references/configuration/'
+            to: '/references/configuration/'
           },
           {
             from: [
@@ -423,7 +497,7 @@ const config = {
               '/documentation/troubleshooting',
               '/documentation/troubleshooting.html'
             ],
-            to: '/docs/references/troubleshooting/'
+            to: '/references/troubleshooting/'
           },
           {
             from: [
@@ -432,14 +506,14 @@ const config = {
               '/documentation/references/understanding_errors',
               '/documentation/references/understanding_errors.html'
             ],
-            to: '/docs/references/understanding_errors/'
+            to: '/references/understanding_errors/'
           },
           {
             from: [
               '/documentation/sample_projects',
               '/documentation/sample_projects.html'
             ],
-            to: '/docs/sample_projects/'
+            to: '/sample_projects/'
           },
           {
             from: [
@@ -448,21 +522,21 @@ const config = {
               '/documentation/supported_protocols/arazzo',
               '/documentation/supported_protocols/arazzo.html'
             ],
-            to: '/docs/supported_protocols/arazzo/'
+            to: '/supported_protocols/arazzo/'
           },
           {
             from: [
               '/documentation/supported_protocols/asyncapi/google-pub-sub',
               '/documentation/supported_protocols/asyncapi/google-pub-sub.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/google-pub-sub/'
+            to: '/supported_protocols/asyncapi/google-pub-sub/'
           },
           {
             from: [
               '/documentation/supported_protocols/asyncapi',
               '/documentation/supported_protocols/asyncapi.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/'
+            to: '/supported_protocols/asyncapi/'
           },
           {
             from: [
@@ -471,7 +545,7 @@ const config = {
               '/documentation/supported_protocols/asyncapi/jms',
               '/documentation/supported_protocols/asyncapi/jms.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/jms/'
+            to: '/supported_protocols/asyncapi/jms/'
           },
           {
             from: [
@@ -482,7 +556,7 @@ const config = {
               '/kafka',
               '/kafka.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/kafka/'
+            to: '/supported_protocols/asyncapi/kafka/'
           },
           {
             from: [
@@ -491,7 +565,7 @@ const config = {
               '/documentation/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async',
               '/documentation/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/'
+            to: '/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/'
           },
           {
             from: [
@@ -500,7 +574,7 @@ const config = {
               '/documentation/supported_protocols/asyncapi/stubbing-kafka',
               '/documentation/supported_protocols/asyncapi/stubbing-kafka.html'
             ],
-            to: '/docs/supported_protocols/asyncapi/kafka/'
+            to: '/supported_protocols/asyncapi/kafka/'
           },
           {
             from: [
@@ -509,7 +583,7 @@ const config = {
               '/documentation/supported_protocols/graphql',
               '/documentation/supported_protocols/graphql.html'
             ],
-            to: '/docs/supported_protocols/graphql/'
+            to: '/supported_protocols/graphql/'
           },
           {
             from: [
@@ -518,7 +592,7 @@ const config = {
               '/documentation/supported_protocols/grpc',
               '/documentation/supported_protocols/grpc.html'
             ],
-            to: '/docs/supported_protocols/grpc/'
+            to: '/supported_protocols/grpc/'
           },
           {
             from: [
@@ -527,7 +601,7 @@ const config = {
               '/documentation/supported_protocols',
               '/documentation/supported_protocols.html'
             ],
-            to: '/docs/supported_protocols/'
+            to: '/supported_protocols/'
           },
           {
             from: [
@@ -538,7 +612,7 @@ const config = {
               '/documentation/supported_protocols/jdbc',
               '/documentation/supported_protocols/jdbc.html'
             ],
-            to: '/docs/supported_protocols/jdbc/'
+            to: '/supported_protocols/jdbc/'
           },
           {
             from: [
@@ -547,7 +621,7 @@ const config = {
               '/documentation/supported_protocols/redis',
               '/documentation/supported_protocols/redis.html'
             ],
-            to: '/docs/supported_protocols/redis/'
+            to: '/supported_protocols/redis/'
           },
           {
             from: [
@@ -558,7 +632,7 @@ const config = {
               '/documentation/wsdl',
               '/documentation/wsdl.html'
             ],
-            to: '/docs/supported_protocols/soap/'
+            to: '/supported_protocols/soap/'
           }
         ]
       }
