@@ -637,6 +637,12 @@ const config = {
                 '/faqs.html'
             ],
             to: '/faqs'
+          },
+          {
+            from: [
+                '/original_petstore_spec.html'
+            ],
+            to: '/original_petstore_spec'
           }
         ]
       }
