@@ -37,16 +37,16 @@ const config = {
   ],
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://specmatic.github.io',
   trailingSlash: true,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/specmatic-documentation/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'specmatic', // Usually your GitHub org/user name.
+  projectName: 'specmatic-documentation', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
