@@ -430,7 +430,8 @@ const config = {
           },
           {
             from: [
-              '/documentation.html'
+              '/documentation.html',
+              '/documentation'
             ],
             to: '/home/'
           },
