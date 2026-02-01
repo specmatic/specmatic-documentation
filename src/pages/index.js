@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '@theme/Layout';
 import styles from './index.module.css';
+import Link from '@docusaurus/Link';
 
 export default function Home() {
   return (
@@ -37,9 +38,9 @@ export default function Home() {
             <a href="https://hub.docker.com/extensions/specmatic/specmatic-docker-desktop-extension" className="button button--secondary">
               Docker Desktop Extension
             </a>
-            <a href="/getting_started/studio_quick_start" className="button button--secondary">
+            <Link className="button button--secondary homeCtaButton" to="/getting_started/studio-quick-start">
               5 Minute Tutorial
-            </a>
+            </Link>
           </div>
         </section>
 
@@ -60,9 +61,9 @@ export default function Home() {
             Use Specmatic locally, in CI pipelines, Docker, and Kubernetes.
           </p>
           <div className={styles.actions}>
-            <a href="/getting_started/cli_quick_start" className="button button--primary">
+            <Link className="button button--primary homeCtaButton" to="/getting_started/cli-quick-start">
               Get started in less than 5 min
-            </a>
+            </Link>
             <a href="https://github.com/specmatic/specmatic" className="button button--secondary">
               View it on GitHub
             </a>
@@ -77,9 +78,10 @@ export default function Home() {
             <li>Ensure agent integrations remain stable</li>
           </ul>
           <div className={styles.actions}>
-            <a href="/getting_started/mcp_auto_test" className="button button--primary">
+
+            <Link className="button button--primary homeCtaButton" to="/getting_started/mcp-auto-test">
               Get started
-            </a>
+            </Link>
             <a href="https://github.com/specmatic/specmatic" className="button button--secondary">
               View it on GitHub
             </a>
