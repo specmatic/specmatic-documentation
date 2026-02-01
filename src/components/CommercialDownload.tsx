@@ -76,18 +76,18 @@ export default function CommercialDownload({
             <TabItem value="linux-macos" label="Linux/macOS">
                 <p>If you have Java 17 or above installed, you can install the executable using the following command and follow the onscreen instructions:</p>
                 <p>To run the latest version:</p>
-                <pre><code className="language-bash">{`curl https://specmatic.io/${installScript}.sh | bash`}</code></pre>
+                <pre><code className="language-bash">{`curl https://docs.specmatic.io/${installScript}.sh | bash`}</code></pre>
                 <p>To install an older version, replace <code>VERSION</code> with the desired version number from the <a href={repoUrl}>Releases</a> page.</p>
-                <pre><code className="language-bash">{`curl https://specmatic.io/${installScript}.sh | bash -- --version VERSION`}</code></pre>
+                <pre><code className="language-bash">{`curl https://docs.specmatic.io/${installScript}.sh | bash -- --version VERSION`}</code></pre>
             </TabItem>
 
             {/* Windows */}
             <TabItem value="windows" label="Windows">
                 <p>If you have Java 17 or above installed, you can install the executable using the following PowerShell command and follow the onscreen instructions:</p>
                 <p>To install the latest version:</p>
-                <pre><code className="language-powershell">{`irm https://specmatic.io/${installScript}.ps1 | iex`}</code></pre>
+                <pre><code className="language-powershell">{`irm https://docs.specmatic.io/${installScript}.ps1 | iex`}</code></pre>
                 <p>To install an older version, replace <code>VERSION</code> with the desired version number from the <a href={repoUrl}>Releases</a> page.</p>
-                <pre><code className="language-powershell">{`iex "& { $(irm 'https://specmatic.io/${installScript}.ps1') } --version VERSION"`}</code></pre>
+                <pre><code className="language-powershell">{`iex "& { $(irm 'https://docs.specmatic.io/${installScript}.ps1') } --version VERSION"`}</code></pre>
             </TabItem>
         </Tabs>
     );
