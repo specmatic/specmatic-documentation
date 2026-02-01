@@ -151,9 +151,9 @@ const config = {
           { from: '/docs/features/json_schema/anyOf-support/', to: '/features/json_schema/anyOf-support/' },
           { from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/' },
           // getting_started
-          { from: ['/docs/getting_started/cli_quick_start/', '/docs/getting_started/cli_quick_start'], to: '/getting_started/cli_quick_start/' },
-          { from: ['/docs/getting_started/mcp_auto_test/', '/docs/getting_started/mcp_auto_test'], to: '/getting_started/mcp_auto_test/' },
-          { from: ['/docs/getting_started/studio_quick_start/', '/docs/getting_started/studio_quick_start'], to: '/getting_started/studio_quick_start/' },
+          { from: '/docs/getting_started/cli_quick_start/', to: '/getting_started/cli_quick_start/' },
+          { from: '/docs/getting_started/mcp_auto_test/', to: '/getting_started/mcp_auto_test/' },
+          { from: '/docs/getting_started/studio_quick_start/', to: '/getting_started/studio_quick_start/' },
           // references
           { from: '/docs/references/configuration/', to: '/references/configuration/' },
           { from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/' },
@@ -171,7 +171,7 @@ const config = {
           { from: '/docs/references/continuous_integration/', to: '/references/continuous_integration/' },
           { from: '/docs/references/troubleshooting/', to: '/references/troubleshooting/' },
           { from: '/docs/references/understanding_errors/', to: '/references/understanding_errors/' },
-          { from: '/docs/references/using_docker_image/', to: '/references/using_docker_image/' },
+          { from: '/docs/references/docker_images/', to: '/references/docker_images/' },
           // supported_protocols
           { from: '/docs/supported_protocols/', to: '/supported_protocols/' },
           { from: '/docs/supported_protocols/arazzo/', to: '/supported_protocols/arazzo/' },
@@ -484,7 +484,7 @@ const config = {
               '/documentation/references/docker_images',
               '/documentation/references/docker_images.html'
             ],
-            to: '/references/using_docker_image/'
+            to: '/references/docker_images/'
           },
           {
             from: [
