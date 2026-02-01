@@ -30,6 +30,24 @@ API Specifications are code, and they are best stored in a version control syste
   * Consistency and standardisation - Commonly used parameter such as traceIds can be defined in one place and used across schemas
   * Avoid duplication related issues - It is common to miss updating / renaming some parts of a schema, by extracting common code we can significantly reduce it
 
+### Setting up a sample central contract repository
+
+1. Create a new Git repository named "api-contracts".
+2. In this repository, create a folder structure to organize your OpenAPI specifications. For our example, we will do it as follows:
+
+      ```
+      api-contracts/
+      ├── orders/
+      │   ├── order_bff.yaml
+      │   └── order_api.yaml
+      └── other-services/
+      ```
+
+3. Download and add the following OpenAPI specifications to the repository as depicted above
+
+- [Order BFF OpenAPI Spec](ccr_tutorial_spec_files/order_bff.yaml)
+- [Order Domain API OpenAPI Spec](ccr_tutorial_spec_files/order_api.yaml)
+
 ## Pull Request / Merge Request Process
 
 It is a good idea to prevent any direct commits to your master / main branch of Central Contract Repo. All changes have to go through a Pull Request or a Merge Request.

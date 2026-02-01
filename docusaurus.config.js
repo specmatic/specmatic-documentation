@@ -116,6 +116,7 @@ const config = {
       prism: {
         theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
+        additionalLanguages: ['groovy', 'kotlin']
       },
     }),
 
@@ -636,13 +637,13 @@ const config = {
           },
           {
             from: [
-                '/faqs.html'
+              '/faqs.html'
             ],
             to: '/faqs'
           },
           {
             from: [
-                '/original_petstore_spec.html'
+              '/original_petstore_spec.html'
             ],
             to: '/original_petstore_spec'
           }

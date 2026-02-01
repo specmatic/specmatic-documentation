@@ -56,3 +56,9 @@
 .menu__list-item.hidden {
   display: none;
 }
+
+.homeCtaButton.button {
+  min-height: unset !important;
+  height: 34px !important;
+  font-size: 14px !important;
+}
