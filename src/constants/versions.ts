@@ -12,4 +12,5 @@ export const VERSIONS = {
     "specmatic-arazzo-version": "1.3.5",
     "specmatic-google-pubsub-version": "0.6.1",
     "specmatic-release-test-version": "0.0.2",
+    "specmatic-enterprise-version": "0.99"
 };

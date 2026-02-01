@@ -322,7 +322,7 @@ Notice that the keys begin with `Address` instead than `Employee`, because the d
 
 
 
-Manually creating a dictionary can be quite an involved process, especially when the schema is complex. This is where, [specmatic-openapi](https://hub.docker.com/r/specmatic/specmatic-openapi) offers a convenient method to generate dictionaries from OpenAPI specifications and existing examples.
+Manually creating a dictionary can be quite an involved process, especially when the schema is complex. This is where, [specmatic/enterprise](https://hub.docker.com/r/specmatic/enterprise) offers a convenient method to generate dictionaries from OpenAPI specifications and existing examples.
 
 <Admonition type="note">
 Automated dictionary generation is only available in the commercial version of Specmatic. For further details, please check the [pricing page](https://specmatic.io/pricing).
@@ -498,10 +498,9 @@ The `_examples` suffix is a naming convention that indicates to Specmatic to loo
 Create a file named `employees_dictionary.yaml` in the same directory as your `employees.yaml` file with an empty object i.e. `{}`, so we volume mount this file to the Docker container
 </Admonition>
 
-After setting up, we can execute the `examples dictionary` command using the `specmatic-openapi` Docker image and provide the path to our `employees.yaml` file as shown below:
-
+After setting up, we can execute the `examples dictionary` command using the `specmatic/enterprise` Docker image and provide the path to our `employees.yaml` file as shown below:
 ```shell
-docker run --rm -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/employees_examples:/usr/src/app/employees_examples" -v "$(pwd)/employees_dictionary.yaml:/usr/src/app/employees_dictionary.yaml" specmatic/specmatic-openapi examples dictionary --spec-file employees.yaml
+docker run --rm -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/employees_examples:/usr/src/app/employees_examples" -v "$(pwd)/employees_dictionary.yaml:/usr/src/app/employees_dictionary.yaml" specmatic/enterprise examples dictionary --spec-file employees.yaml
 ```
 
 ### Understanding the Dictionary
@@ -548,7 +547,7 @@ the command will include only valid values in the dictionary, allowing it to be 
 If you have examples in some other existing directory, you could provide the path to that directory using the `--examples-dir` option as shown below:
 
 ```shell
-docker run --rm -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/examples:/usr/src/app/examples" -v "$(pwd)/employees_dictionary.yaml:/usr/src/app/employees_dictionary.yaml" specmatic/specmatic-openapi examples dictionary --spec-file employees.yaml --examples-dir ./examples
+docker run --rm -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/examples:/usr/src/app/examples" -v "$(pwd)/employees_dictionary.yaml:/usr/src/app/employees_dictionary.yaml" specmatic/enterprise examples dictionary --spec-file employees.yaml --examples-dir ./examples
 ```
 
 ## Dictionary with Contract Testing

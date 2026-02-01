@@ -140,7 +140,7 @@ When using Specmatic with Docker, you must pass the license key as follows:
   <TabItem value="docker-linux-macos" label="Docker Linux/macOS">
 
 ```shell
-docker run -it --rm -v ~/.specmatic:/root/.specmatic specmatic/specmatic-openapi -h
+docker run -it --rm -v ~/.specmatic:/root/.specmatic specmatic/enterprise -h
 ```
 
   </TabItem>
@@ -148,7 +148,7 @@ docker run -it --rm -v ~/.specmatic:/root/.specmatic specmatic/specmatic-openapi
   <TabItem value="docker-win-powershell" label="Docker-Win-Powershell">
 
 ```shell
-docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/specmatic-openapi -h
+docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmatic/enterprise -h
 ```
 
   </TabItem>
@@ -156,7 +156,7 @@ docker run -it --rm -v "${env:USERPROFILE}/.specmatic:/root/.specmatic" specmati
   <TabItem value="docker-win-commandprompt" label="Docker-Win-CommandPrompt">
 
 ```shell
-docker run -it --rm -v "%USERPROFILE%\.specmatic:/root/.specmatic" specmatic/specmatic-openapi -h
+docker run -it --rm -v "%USERPROFILE%\.specmatic:/root/.specmatic" specmatic/enterprise -h
 ```
 
   </TabItem>

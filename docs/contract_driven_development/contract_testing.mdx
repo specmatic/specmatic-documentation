@@ -305,7 +305,7 @@ java -jar /path/to/specmatic.jar --testBaseURL https://my-json-server.typicode.c
 Alternatively, we can also run the same command with the Docker image:
 
 ```bash
-docker run specmatic/specmatic --testBaseURL https://my-json-server.typicode.com --junitReportDir ./test-output
+docker run -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/employees_examples:/usr/src/app/employees_examples" specmatic/enterprise examples generate employees.yaml
 ```
 
 The command will create JUnit test XML output in the specified directory which you can then include as part of CI pipeline results etc.

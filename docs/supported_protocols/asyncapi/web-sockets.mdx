@@ -189,7 +189,7 @@ execSync(
   `docker run --rm --network host \
    -v "${cwd}/specmatic.yaml:/usr/src/app/specmatic.yaml" \
    -v "${cwd}/specification:/usr/src/app/specification" \
-   specmatic/specmatic-async test \
+   specmatic/enterprise test \
    --overlay=specification/overlay.yaml`,
   { stdio: "inherit" }
 );
@@ -221,7 +221,7 @@ You can also run the application manually and use the docker command as follows:
 docker run --rm --network host \
  -v "${cwd}/specmatic.yaml:/usr/src/app/specmatic.yaml" \
  -v "${cwd}/specification:/usr/src/app/specification" \
- specmatic/specmatic-async test \
+ specmatic/enterprise test \
  --overlay=specification/overlay.yaml
 ```
 

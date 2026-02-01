@@ -203,9 +203,8 @@ Let's see how this is done.
 
 - Run the `examples` command:<br/><br/>
 ```shell
-docker run -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/employees_examples:/usr/src/app/employees_examples" specmatic/specmatic-openapi examples generate employees.yaml
+docker run -v "$(pwd)/employees.yaml:/usr/src/app/employees.yaml" -v "$(pwd)/employees_examples:/usr/src/app/employees_examples" specmatic/enterprise examples generate employees.yaml
 ```
-
 - It generates a request-response mapping JSON file in the `employees_examples` directory containing an example of the API in the spec.
   - The directory name follows the format `<spec file name without extension>_examples`.
   - The example file name as generated indicates the operation it was generated from. In fact, the name is not limited to any format. You can choose a name that is meaningful to you.

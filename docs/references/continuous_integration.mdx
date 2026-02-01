@@ -480,7 +480,7 @@ jobs:
             -v ${{ github.workspace }}/specmatic.yaml:/usr/src/app/specmatic.yaml \
             -v ${{ github.workspace }}/build/reports/specmatic:/usr/src/app/build/reports/specmatic \
             -p 9000:9000 \
-            specmatic/specmatic-openapi stub
+            specmatic/enterprise stub
 
           # Wait for the stub to be ready
           sleep 10
@@ -497,7 +497,7 @@ jobs:
             -v ${{ github.workspace }}/specmatic.yaml:/usr/src/app/specmatic.yaml \
             -v ${{ github.workspace }}/build/reports/specmatic:/usr/src/app/build/reports/specmatic \
             --network=host \
-            specmatic/specmatic-openapi test \
+             specmatic/enterprise test \
             --port=8080 \
             --host=localhost
 

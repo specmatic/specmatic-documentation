@@ -50,11 +50,11 @@ Replace the `specmatic-kafka` image with `specmatic-async` in your Docker comman
 
 **Before:**
 ```bash
-docker run specmatic/specmatic-kafka test
+docker run specmatic/enterprise test
 ```
 **After:**
 ```bash
-docker run specmatic/specmatic-async test
+docker run specmatic/enterprise test
 ```
 
 ### 3. Update Programmatic Usage
@@ -122,7 +122,7 @@ jobs:
             -v "$PWD/specmatic.yaml:/usr/src/app/specmatic.yaml" \
             -v "$PWD/spec:/usr/src/app/spec" \
             -v "$PWD/specmatic-kafka-config.properties:/usr/src/app/specmatic-kafka-config.properties" \
-            specmatic/specmatic-kafka test
+           specmatic/enterprise test
 ```
 
 **After (specmatic-async):**
@@ -171,7 +171,7 @@ jobs:
           docker run --rm \
             -v "$PWD/specmatic.yaml:/usr/src/app/specmatic.yaml" \
             -v "$PWD/spec:/usr/src/app/spec" \
-            specmatic/specmatic-async test
+            specmatic/enterprise test
 ```
 
 ### Docker Setup Migration
@@ -181,14 +181,14 @@ docker run --rm \
   -v "$PWD/specmatic.yaml:/usr/src/app/specmatic.yaml" \
   -v "$PWD/spec:/usr/src/app/spec" \
   -v "$PWD/specmatic-kafka-config.properties:/usr/src/app/specmatic-kafka-config.properties" \
-  specmatic/specmatic-kafka test
+ specmatic/enterprise test
 ```
 **After (specmatic-async):**
 ```bash
 docker run --rm \
   -v "$PWD/specmatic.yaml:/usr/src/app/specmatic.yaml" \
   -v "$PWD/spec:/usr/src/app/spec" \
-  specmatic/specmatic-async test
+   specmatic/enterprise test
 ```
 
 ## Additional Resources
