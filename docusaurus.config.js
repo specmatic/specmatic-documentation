@@ -650,7 +650,14 @@ const config = {
               '/original_petstore_spec.html'
             ],
             to: '/original_petstore_spec'
-          }
+          },
+          {
+            from: [
+              '/rules/index'
+            ],
+            to: '/rules/'
+          },
+
         ]
       }
     ]
