@@ -4,9 +4,35 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import { themes as prismThemes } from 'prism-react-renderer';
+import {themes as prismThemes} from 'prism-react-renderer';
+import {VERSIONS} from './src/constants/versions';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
+
+const specmaticCore = {
+  toolVersion: VERSIONS['specmatic-core-version'],
+  downloadTarget: "specmatic",
+  toolName: "Specmatic",
+  siteUrl: "https://docs.specmatic.io",
+  pageName: "install-specmatic.sh",
+  downloadUrls: [
+    `https://repo1.maven.org/maven2/io/specmatic/specmatic-executable-all/${VERSIONS['specmatic-core-version']}/specmatic-executable-all-${VERSIONS['specmatic-core-version']}.jar`,
+    `https://github.com/specmatic/specmatic/releases/download/${VERSIONS['specmatic-core-version']}/specmatic.jar`,
+    `https://repo.specmatic.io/releases/io/specmatic/specmatic-executable-all/${VERSIONS['specmatic-core-version']}/specmatic-executable-all-${VERSIONS['specmatic-core-version']}.jar`,
+  ]
+};
+
+const specmaticEnterprise = {
+  toolVersion: VERSIONS['specmatic-enterprise-version'],
+  downloadTarget: "specmatic-enterprise",
+  toolName: "Specmatic Enterprise",
+  siteUrl: "https://docs.specmatic.io",
+  pageName: "install-specmatic-enterprise.sh",
+  downloadUrls: [
+    `https://repo1.maven.org/maven2/io/specmatic/enterprise/specmatic-enterprise-all/${VERSIONS['specmatic-enterprise-version']}/specmatic-enterprise-all-${VERSIONS['specmatic-enterprise-version']}.jar`,
+    `https://repo.specmatic.io/releases/io/specmatic/enterprise/specmatic-enterprise-all/${VERSIONS['specmatic-enterprise-version']}/specmatic-enterprise-all-${VERSIONS['specmatic-enterprise-version']}.jar`,
+  ]
+}
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -39,11 +65,11 @@ const config = {
   ],
 
   // Set the production url of your site here
-  url: 'https://specmatic.github.io',
+  url: 'https://docs.specmatic.io',
   trailingSlash: true,
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/specmatic-documentation/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
@@ -81,7 +107,7 @@ const config = {
   ],
 
   themeConfig:
-    /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
       image: 'img/specmatic-logo-round.svg',
@@ -134,70 +160,70 @@ const config = {
           { from: '/docs/contract_driven_development/generating_api_specifications/', to: '/contract_driven_development/generating_api_specifications/' },
           { from: '/docs/contract_driven_development/service_virtualization/', to: '/contract_driven_development/service_virtualization/' },
           // enterprise_onboarding
-          { from: '/docs/enterprise_onboarding/insights/', to: '/enterprise_onboarding/insights/' },
-          { from: '/docs/enterprise_onboarding/license_key/', to: '/enterprise_onboarding/license_key/' },
+          {from: '/docs/enterprise_onboarding/insights/', to: '/enterprise_onboarding/insights/'},
+          {from: '/docs/enterprise_onboarding/license_key/', to: '/enterprise_onboarding/license_key/'},
           { from: '/docs/enterprise_onboarding/offline_license_set_up/', to: '/enterprise_onboarding/offline_license_set_up/' },
           { from: '/docs/enterprise_onboarding/SSO/entra-integration/', to: '/enterprise_onboarding/SSO/entra-integration/' },
           { from: '/docs/enterprise_onboarding/SSO/okta-integration/', to: '/enterprise_onboarding/SSO/okta-integration/' },
           // features
-          { from: '/docs/features/authentication/', to: '/features/authentication/' },
-          { from: '/docs/features/dictionary/', to: '/features/dictionary/' },
+          {from: '/docs/features/authentication/', to: '/features/authentication/'},
+          {from: '/docs/features/dictionary/', to: '/features/dictionary/'},
           { from: '/docs/features/testing_event_flows-and_behaviors/', to: '/features/testing_event_flows-and_behaviors/' },
-          { from: '/docs/features/external_examples/', to: '/features/external_examples/' },
-          { from: '/docs/features/stubbing_featurehub/', to: '/features/stubbing_featurehub/' },
-          { from: '/docs/features/overlays/', to: '/features/overlays/' },
-          { from: '/docs/features/hooks/hooks_to_modify_specs/', to: '/features/hooks/hooks_to_modify_specs/' },
-          { from: '/docs/features/hooks/processor_hooks/', to: '/features/hooks/processor_hooks/' },
-          { from: '/docs/features/json_schema/anyOf-support/', to: '/features/json_schema/anyOf-support/' },
-          { from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/' },
+          {from: '/docs/features/external_examples/', to: '/features/external_examples/'},
+          {from: '/docs/features/stubbing_featurehub/', to: '/features/stubbing_featurehub/'},
+          {from: '/docs/features/overlays/', to: '/features/overlays/'},
+          {from: '/docs/features/hooks/hooks_to_modify_specs/', to: '/features/hooks/hooks_to_modify_specs/'},
+          {from: '/docs/features/hooks/processor_hooks/', to: '/features/hooks/processor_hooks/'},
+          {from: '/docs/features/json_schema/anyOf-support/', to: '/features/json_schema/anyOf-support/'},
+          {from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/'},
           // getting_started
-          { from: '/docs/getting_started/cli_quick_start/', to: '/getting_started/cli_quick_start/' },
-          { from: '/docs/getting_started/mcp_auto_test/', to: '/getting_started/mcp_auto_test/' },
-          { from: '/docs/getting_started/studio_quick_start/', to: '/getting_started/studio_quick_start/' },
+          {from: '/docs/getting_started/cli_quick_start/', to: '/getting_started/cli_quick_start/'},
+          {from: '/docs/getting_started/mcp_auto_test/', to: '/getting_started/mcp_auto_test/'},
+          {from: '/docs/getting_started/studio_quick_start/', to: '/getting_started/studio_quick_start/'},
           // references
-          { from: '/docs/references/configuration/', to: '/references/configuration/' },
-          { from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/' },
+          {from: '/docs/references/configuration/', to: '/references/configuration/'},
+          {from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/'},
           { from: '/docs/references/configuration/complete-examples/', to: '/references/configuration/complete-examples/' },
           { from: '/docs/references/configuration/contract-management/', to: '/references/configuration/contract-management/' },
-          { from: '/docs/references/configuration/environments/', to: '/references/configuration/environments/' },
-          { from: '/docs/references/configuration/getting-started/', to: '/references/configuration/getting-started/' },
-          { from: '/docs/references/configuration/hooks/', to: '/references/configuration/hooks/' },
-          { from: '/docs/references/configuration/reports/', to: '/references/configuration/reports/' },
+          {from: '/docs/references/configuration/environments/', to: '/references/configuration/environments/'},
+          {from: '/docs/references/configuration/getting-started/', to: '/references/configuration/getting-started/'},
+          {from: '/docs/references/configuration/hooks/', to: '/references/configuration/hooks/'},
+          {from: '/docs/references/configuration/reports/', to: '/references/configuration/reports/'},
           { from: '/docs/references/configuration/stub-configuration/', to: '/references/configuration/stub-configuration/' },
-          { from: '/docs/references/configuration/telemetry/', to: '/references/configuration/telemetry/' },
-          { from: '/docs/references/configuration/template-values/', to: '/references/configuration/template-values/' },
+          {from: '/docs/references/configuration/telemetry/', to: '/references/configuration/telemetry/'},
+          {from: '/docs/references/configuration/template-values/', to: '/references/configuration/template-values/'},
           { from: '/docs/references/configuration/test-configuration/', to: '/references/configuration/test-configuration/' },
           { from: '/docs/references/configuration/upgrade-specmatic-config/', to: '/references/configuration/upgrade-specmatic-config/' },
-          { from: '/docs/references/continuous_integration/', to: '/references/continuous_integration/' },
-          { from: '/docs/references/troubleshooting/', to: '/references/troubleshooting/' },
-          { from: '/docs/references/understanding_errors/', to: '/references/understanding_errors/' },
-          { from: '/docs/references/docker_images/', to: '/references/docker_images/' },
+          {from: '/docs/references/continuous_integration/', to: '/references/continuous_integration/'},
+          {from: '/docs/references/troubleshooting/', to: '/references/troubleshooting/'},
+          {from: '/docs/references/understanding_errors/', to: '/references/understanding_errors/'},
+          {from: '/docs/references/docker_images/', to: '/references/docker_images/'},
           // supported_protocols
-          { from: '/docs/supported_protocols/', to: '/supported_protocols/' },
-          { from: '/docs/supported_protocols/arazzo/', to: '/supported_protocols/arazzo/' },
-          { from: '/docs/supported_protocols/graphql/', to: '/supported_protocols/graphql/' },
-          { from: '/docs/supported_protocols/grpc/', to: '/supported_protocols/grpc/' },
-          { from: '/docs/supported_protocols/jdbc/', to: '/supported_protocols/jdbc/' },
-          { from: '/docs/supported_protocols/redis/', to: '/supported_protocols/redis/' },
-          { from: '/docs/supported_protocols/soap/', to: '/supported_protocols/soap/' },
-          { from: '/docs/supported_protocols/asyncapi/', to: '/supported_protocols/asyncapi/' },
-          { from: '/docs/supported_protocols/asyncapi/active-mq/', to: '/supported_protocols/asyncapi/active-mq/' },
+          {from: '/docs/supported_protocols/', to: '/supported_protocols/'},
+          {from: '/docs/supported_protocols/arazzo/', to: '/supported_protocols/arazzo/'},
+          {from: '/docs/supported_protocols/graphql/', to: '/supported_protocols/graphql/'},
+          {from: '/docs/supported_protocols/grpc/', to: '/supported_protocols/grpc/'},
+          {from: '/docs/supported_protocols/jdbc/', to: '/supported_protocols/jdbc/'},
+          {from: '/docs/supported_protocols/redis/', to: '/supported_protocols/redis/'},
+          {from: '/docs/supported_protocols/soap/', to: '/supported_protocols/soap/'},
+          {from: '/docs/supported_protocols/asyncapi/', to: '/supported_protocols/asyncapi/'},
+          {from: '/docs/supported_protocols/asyncapi/active-mq/', to: '/supported_protocols/asyncapi/active-mq/'},
           { from: '/docs/supported_protocols/asyncapi/aws-event-bridge/', to: '/supported_protocols/asyncapi/aws-event-bridge/' },
-          { from: '/docs/supported_protocols/asyncapi/aws-sns/', to: '/supported_protocols/asyncapi/aws-sns/' },
-          { from: '/docs/supported_protocols/asyncapi/aws-sqs/', to: '/supported_protocols/asyncapi/aws-sqs/' },
+          {from: '/docs/supported_protocols/asyncapi/aws-sns/', to: '/supported_protocols/asyncapi/aws-sns/'},
+          {from: '/docs/supported_protocols/asyncapi/aws-sqs/', to: '/supported_protocols/asyncapi/aws-sqs/'},
           { from: '/docs/supported_protocols/asyncapi/google-pub-sub/', to: '/supported_protocols/asyncapi/google-pub-sub/' },
-          { from: '/docs/supported_protocols/asyncapi/jms/', to: '/supported_protocols/asyncapi/jms/' },
-          { from: '/docs/supported_protocols/asyncapi/kafka/', to: '/supported_protocols/asyncapi/kafka/' },
+          {from: '/docs/supported_protocols/asyncapi/jms/', to: '/supported_protocols/asyncapi/jms/'},
+          {from: '/docs/supported_protocols/asyncapi/kafka/', to: '/supported_protocols/asyncapi/kafka/'},
           { from: '/docs/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/', to: '/supported_protocols/asyncapi/migrate-from-specmatic-kafka-to-async/' },
-          { from: '/docs/supported_protocols/asyncapi/mqtt/', to: '/supported_protocols/asyncapi/mqtt/' },
-          { from: '/docs/supported_protocols/asyncapi/rabbit-mq/', to: '/supported_protocols/asyncapi/rabbit-mq/' },
-          { from: '/docs/supported_protocols/asyncapi/web-sockets/', to: '/supported_protocols/asyncapi/web-sockets/' },
+          {from: '/docs/supported_protocols/asyncapi/mqtt/', to: '/supported_protocols/asyncapi/mqtt/'},
+          {from: '/docs/supported_protocols/asyncapi/rabbit-mq/', to: '/supported_protocols/asyncapi/rabbit-mq/'},
+          {from: '/docs/supported_protocols/asyncapi/web-sockets/', to: '/supported_protocols/asyncapi/web-sockets/'},
           // top-level pages
-          { from: '/docs/home/', to: '/home/' },
-          { from: '/docs/download/', to: '/download/' },
-          { from: '/docs/sample_projects/', to: '/sample_projects/' },
-          { from: '/docs/security-disclosure/', to: '/security-disclosure/' },
-          { from: '/docs/vulnerability-remediation-sla/', to: '/vulnerability-remediation-sla/' },
+          {from: '/docs/home/', to: '/home/'},
+          {from: '/docs/download/', to: '/download/'},
+          {from: '/docs/sample_projects/', to: '/sample_projects/'},
+          {from: '/docs/security-disclosure/', to: '/security-disclosure/'},
+          {from: '/docs/vulnerability-remediation-sla/', to: '/vulnerability-remediation-sla/'},
 
           // === Legacy redirects (from old documentation paths) ===
           {
@@ -658,6 +684,39 @@ const config = {
             to: '/rules/'
           },
 
+        ]
+      }
+    ],
+    [
+      './plugins/textFilePlugin',
+      {
+        templates: [
+          {
+            templateFile: './templates/install-specmatic-tool.ps1.ejs',
+            outputFiles: [
+              {
+                filename: 'install-specmatic.ps1',
+                data: specmaticCore
+              },
+              {
+                filename: 'install-specmatic-enterprise.ps1',
+                data: specmaticEnterprise
+              },
+            ]
+          },
+          {
+            templateFile: './templates/install-specmatic-tool.sh.ejs',
+            outputFiles: [
+              {
+                filename: 'install-specmatic.sh',
+                data: specmaticCore
+              },
+              {
+                filename: 'install-specmatic-enterprise.sh',
+                data: specmaticEnterprise
+              },
+            ]
+          },
         ]
       }
     ]
