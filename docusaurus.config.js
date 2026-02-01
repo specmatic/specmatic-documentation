@@ -142,18 +142,18 @@ const config = {
           // features
           { from: '/docs/features/authentication/', to: '/features/authentication/' },
           { from: '/docs/features/dictionary/', to: '/features/dictionary/' },
-          { from: '/docs/features/event_flow_and_behaviour/', to: '/features/event_flow_and_behaviour/' },
+          { from: '/docs/features/testing_event_flows-and_behaviors/', to: '/features/testing_event_flows-and_behaviors/' },
           { from: '/docs/features/external_examples/', to: '/features/external_examples/' },
-          { from: '/docs/features/feature-hub-stubbing/', to: '/features/feature-hub-stubbing/' },
+          { from: '/docs/features/stubbing_featurehub/', to: '/features/stubbing_featurehub/' },
           { from: '/docs/features/overlays/', to: '/features/overlays/' },
           { from: '/docs/features/hooks/hooks_to_modify_specs/', to: '/features/hooks/hooks_to_modify_specs/' },
           { from: '/docs/features/hooks/processor_hooks/', to: '/features/hooks/processor_hooks/' },
-          { from: '/docs/features/json_schema/anyOf_support/', to: '/features/json_schema/anyOf_support/' },
+          { from: '/docs/features/json_schema/anyOf-support/', to: '/features/json_schema/anyOf-support/' },
           { from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/' },
           // getting_started
-          { from: ['/docs/getting_started/cli-quick-start/', '/docs/getting_started/cli_quick_start'], to: '/getting_started/cli-quick-start/' },
-          { from: ['/docs/getting_started/mcp-auto-test/', '/docs/getting_started/mcp_auto_test'], to: '/getting_started/mcp-auto-test/' },
-          { from: ['/docs/getting_started/studio-quick-start/', '/docs/getting_started/studio_quick_start'], to: '/getting_started/studio-quick-start/' },
+          { from: ['/docs/getting_started/cli_quick_start/', '/docs/getting_started/cli_quick_start'], to: '/getting_started/cli_quick_start/' },
+          { from: ['/docs/getting_started/mcp_auto_test/', '/docs/getting_started/mcp_auto_test'], to: '/getting_started/mcp_auto_test/' },
+          { from: ['/docs/getting_started/studio_quick_start/', '/docs/getting_started/studio_quick_start'], to: '/getting_started/studio_quick_start/' },
           // references
           { from: '/docs/references/configuration/', to: '/references/configuration/' },
           { from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/' },
@@ -318,7 +318,7 @@ const config = {
           {
             from: [
               '/features/convert_gherkin_to_openapi',
-              '/features/convert_gherkin_to_openapi.html'
+              '/features/convert_gherkin_to_openapi.html',
               '/documentation/convert_gherkin_to_openapi',
               '/documentation/convert_gherkin_to_openapi.html'
             ],
@@ -374,7 +374,7 @@ const config = {
               '/documentation/features/json_schema/anyOf-support',
               '/documentation/features/json_schema/anyOf-support.html'
             ],
-            to: '/features/json_schema/anyOf_support/'
+            to: '/features/json_schema/anyOf-support/'
           },
           {
             from: [
@@ -399,14 +399,14 @@ const config = {
               '/documentation/stubbing_featurehub',
               '/documentation/stubbing_featurehub.html'
             ],
-            to: '/features/feature-hub-stubbing/'
+            to: '/features/stubbing_featurehub/'
           },
           {
             from: [
               '/documentation/getting_started/cli_quick_start',
               '/documentation/getting_started/cli_quick_start.html'
             ],
-            to: '/getting_started/cli-quick-start/'
+            to: '/getting_started/cli_quick_start/'
           },
           {
             from: [
@@ -422,7 +422,7 @@ const config = {
               '/documentation/mcp_auto_test',
               '/documentation/mcp_auto_test.html'
             ],
-            to: '/getting_started/mcp-auto-test/'
+            to: '/getting_started/mcp_auto_test/'
           },
           {
             from: [
@@ -433,7 +433,7 @@ const config = {
               '/studio_quick_start',
               '/studio_quick_start.html'
             ],
-            to: '/getting_started/studio-quick-start/'
+            to: '/getting_started/studio_quick_start/'
           },
           {
             from: [

@@ -38,7 +38,7 @@ export default function Home() {
             <a href="https://hub.docker.com/extensions/specmatic/specmatic-docker-desktop-extension" className="button button--secondary">
               Docker Desktop Extension
             </a>
-            <Link className="button button--secondary homeCtaButton" to="/getting_started/studio-quick-start">
+            <Link className="button button--secondary homeCtaButton" to="/getting_started/studio_quick_start">
               5 Minute Tutorial
             </Link>
           </div>
@@ -61,7 +61,7 @@ export default function Home() {
             Use Specmatic locally, in CI pipelines, Docker, and Kubernetes.
           </p>
           <div className={styles.actions}>
-            <Link className="button button--primary homeCtaButton" to="/getting_started/cli-quick-start">
+            <Link className="button button--primary homeCtaButton" to="/getting_started/cli_quick_start">
               Get started in less than 5 min
             </Link>
             <a href="https://github.com/specmatic/specmatic" className="button button--secondary">
@@ -79,7 +79,7 @@ export default function Home() {
           </ul>
           <div className={styles.actions}>
 
-            <Link className="button button--primary homeCtaButton" to="/getting_started/mcp-auto-test">
+            <Link className="button button--primary homeCtaButton" to="/getting_started/mcp_auto_test">
               Get started
             </Link>
             <a href="https://github.com/specmatic/specmatic" className="button button--secondary">
