@@ -308,6 +308,8 @@ const config = {
             from: [
               '/documentation/authentication-by-reaching-another-service',
               '/documentation/authentication-by-reaching-another-service.html',
+              '/features/authentication-by-reaching-another-service',
+              '/features/authentication-by-reaching-another-service.html',
               '/documentation/features/authentication-by-reaching-another-service',
               '/documentation/features/authentication-by-reaching-another-service.html'
             ],
@@ -315,6 +317,8 @@ const config = {
           },
           {
             from: [
+              '/features/convert_gherkin_to_openapi',
+              '/features/convert_gherkin_to_openapi.html'
               '/documentation/convert_gherkin_to_openapi',
               '/documentation/convert_gherkin_to_openapi.html'
             ],
