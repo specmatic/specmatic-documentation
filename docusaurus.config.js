@@ -151,9 +151,9 @@ const config = {
           { from: '/docs/features/json_schema/anyOf_support/', to: '/features/json_schema/anyOf_support/' },
           { from: '/docs/features/json_schema/discriminator/', to: '/features/json_schema/discriminator/' },
           // getting_started
-          { from: '/docs/getting_started/cli-quick-start/', to: '/getting_started/cli-quick-start/' },
-          { from: '/docs/getting_started/mcp-auto-test/', to: '/getting_started/mcp-auto-test/' },
-          { from: '/docs/getting_started/studio-quick-start/', to: '/getting_started/studio-quick-start/' },
+          { from: ['/docs/getting_started/cli-quick-start/', '/docs/getting_started/cli_quick_start'], to: '/getting_started/cli-quick-start/' },
+          { from: ['/docs/getting_started/mcp-auto-test/', '/docs/getting_started/mcp_auto_test'], to: '/getting_started/mcp-auto-test/' },
+          { from: ['/docs/getting_started/studio-quick-start/', '/docs/getting_started/studio_quick_start'], to: '/getting_started/studio-quick-start/' },
           // references
           { from: '/docs/references/configuration/', to: '/references/configuration/' },
           { from: '/docs/references/configuration/authentication/', to: '/references/configuration/authentication/' },
