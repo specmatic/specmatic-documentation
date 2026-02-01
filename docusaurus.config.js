@@ -24,16 +24,18 @@ const config = {
 
   themes: [
     "@docusaurus/theme-mermaid",
-  /** @type {any} */ ([
+    [
       require.resolve("@easyops-cn/docusaurus-search-local"),
-      {
+      /** @type {import("@easyops-cn/docusaurus-search-local").PluginOptions} */
+      ({
         hashed: true,
         indexDocs: true,
         indexBlog: false,
         indexPages: false,
         language: ["en"],
-      },
-    ]),
+        docsRouteBasePath: "/",
+      }),
+    ],
   ],
 
   // Set the production url of your site here
