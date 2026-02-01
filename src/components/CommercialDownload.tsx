@@ -8,6 +8,8 @@ interface CommercialDownloadProps {
     jarUrl: string;
     repoUrl: string;
     installScript: string;
+    mavenGroupId?: string;
+    mavenArtifactId?: string;
 }
 
 export default function CommercialDownload({
@@ -16,6 +18,8 @@ export default function CommercialDownload({
     jarUrl,
     repoUrl,
     installScript,
+    mavenGroupId,
+    mavenArtifactId,
 }: CommercialDownloadProps) {
     // Extract tab name from image name (e.g., "specmatic/specmatic-openapi" -> "specmatic-openapi")
     const tabName = imageName.replace('specmatic/', '');
@@ -62,6 +66,26 @@ export default function CommercialDownload({
                 <p>For older versions, replace <code>VERSION</code> with the desired version number from the <a href={`https://hub.docker.com/r/${imageName}/tags`}>Docker Hub</a> page:</p>
                 <pre><code className="language-batch">{`docker run -it --rm ${imageName}:VERSION --help`}</code></pre>
             </TabItem>
+
+            <TabItem value="maven" label="Maven">
+                {mavenGroupId && mavenArtifactId ? (
+                    <>
+                        <p>Add this dependency to your project:</p>
+
+                        <pre>
+                            <code className="language-xml">{`<dependency>
+  <groupId>${mavenGroupId}</groupId>
+  <artifactId>${mavenArtifactId}</artifactId>
+  <version>${toolVersion}</version>
+</dependency>`}</code>
+                        </pre>
+                    </>
+                ) : (
+                    <p>Maven coordinates are not available for this tool.</p>
+                )}
+            </TabItem>
+
+
 
             {/* JAR */}
             <TabItem value="jar" label="JAR">
